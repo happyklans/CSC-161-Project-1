@@ -1,0 +1,4 @@
+﻿  AddrTest.cpp
+c:\users\s02157207\documents\visual studio 2017\projects\addrtest\addrtest.cpp(74): warning C4065: switch statement contains 'default' but no 'case' labels
+  AddrTest.vcxproj -> c:\users\s02157207\documents\visual studio 2017\Projects\AddrTest\Debug\AddrTest.exe
+  AddrTest.vcxproj -> c:\users\s02157207\documents\visual studio 2017\Projects\AddrTest\Debug\AddrTest.pdb (Partial PDB)
