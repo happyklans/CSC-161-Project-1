@@ -18,14 +18,14 @@ Name::Name(std::string fname, std::string lname)
 // gets user input for first and last name
 void Name::set_full_name()
 {
-	std::cout << "Enter your first name: ";
+	std::cout << "Enter the first name: ";
 	
 	std::cin >> first_name;
 	
 	if (std::cin.peek() == '\n')
 		std::cin.ignore();
 	
-	std::cout << "Enter your last name: ";
+	std::cout << "Enter the last name: ";
 	
 	std::cin >> last_name;
 	
