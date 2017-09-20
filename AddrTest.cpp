@@ -9,13 +9,18 @@ Menu program for the address book aplication
 #include <string>
 #include <thread>
 #include <chrono>
+#include "addr_book.h"
 using namespace std;
 
 
 int main()
 {
 	int menu_choice = 0; // user entered selection for initiating the correct function 
+	
 	string input_validator; // used to ensure valid input
+
+	addr_book my_contacts;
+
 
 	// opening graphic for flourish
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -69,9 +74,46 @@ int main()
 
 		switch (menu_choice)
 		{
+		case 1:
+		{
+			Contact to_be_added; //block scope object to be added to the address_book
+
+			to_be_added.set_contact_info();
+
+			my_contacts.add_contact(to_be_added);
+
+			break;
+		}
+		case 2:
+			cout << "your AddressBook has " << my_contacts.get_used() << " contacts in it." << endl;
+
+			break;
+		case 3:
+			my_contacts.print_all_contacts();
+
+			break;
+		case 4:
+			int index_to_remove = 0;
+
+			cout << "Enter the index of the contact you would like to remove, or,"
+				<< " if you are unsure, enter -1 to return to the menu: ";
+
+			cin >> index_to_remove;
+
+			if (index_to_remove == -1)
+				break;
+			else if (index_to_remove < 0 || index_to_remove >= my_contacts.get_max_size())
+				cout << "Sorry, I couldn't find the contact at that location." <<
+				" Print all contacts to from the main menu to find the righ index";
+			else
+			{
+				my_contacts.remove_contact_by_index(index_to_remove);
+			}
+
 		default:
 			break;
 		}
+	}
 	}
 
 	return 0;
