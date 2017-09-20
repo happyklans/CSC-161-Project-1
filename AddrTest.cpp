@@ -158,6 +158,27 @@ int main()
 
 		switch (menu_choice)
 		{
+		case 1:
+		{
+			Contact to_be_added; //block scope object to be added to the address_book
+
+			to_be_added.set_contact_info();
+
+			my_contacts.add_contact(to_be_added);
+
+			break;
+		}
+		case 2:
+			cout << "your AddressBook has " << my_contacts.get_used() << " contacts in it." << endl;
+
+			break;
+		case 3:
+			my_contacts.print_all_contacts();
+
+			break;
+		case 4:
+			my_contacts.remove_contact_by_index()
+				
 		default:
 			break;
 		}
