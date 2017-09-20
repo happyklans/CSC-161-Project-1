@@ -14,9 +14,9 @@ void addr_book::add_contact(Contact itemToAdd)
 
 	used = get_used();
 
-	if (used = MAX_SIZE)
+	if (used == MAX_SIZE)
 	{
-		std::cout << "Your AddressBook is full. Please delete some of your contacts before trying to add any more." << endl;
+		std::cout << "Your AddressBook is full. Please delete some of your contacts before trying to add any more." << std::endl;
 	}
 	else
 		address_book[used] = itemToAdd;
@@ -28,7 +28,7 @@ void addr_book::remove_contact(Contact itemToRemove)
 
 	for (int i = 0; i < get_used(); i++)
 	{
-		if (itemToRemove.to_string() == address_book[i].to_string)
+		if (itemToRemove.to_string() == address_book[i].to_string())
 		{
 			address_book[i] = address_book[get_used() - 1];
 			
@@ -43,14 +43,23 @@ int addr_book::find_contact(Contact itemToFind)
 {
 	bool found = false;
 	
+	std::string search_value;
+
+	std::string possible_match;
+
+	search_value = itemToFind.to_string();
+
+	
+	
 	for (int i = 0; i < get_used(); i++)
 	{
-		if (itemToFind.to_string() == address_book[i].to_string)
+		possible_match = address_book[i].to_string();
+
+		if (search_value == possible_match)
 			found = true;
 		else
-		{
 			found = false;
-		}
+		
 
 		if (found == true)
 			return i;
@@ -72,7 +81,7 @@ void addr_book::print_all_contacts()
 {
 	for (int i = 0; i < get_used(); i++)
 	{
-		std::cout << address_book[i].to_string() << std::endl;
+		std::cout << i+1 << address_book[i].to_string() << std::endl;
 	}
 
 	return;
@@ -105,7 +114,7 @@ void addr_book::read_file(std::string filename)
 
 	address_book.open(filename, std::ios::out); //open the csv for reading
 
-	if (address_book.eof == false)//does not enter the loop if the file is empty
+	if (address_book.eof() == false)//does not enter the loop if the file is empty
 	{
 		do
 		{

@@ -16,6 +16,8 @@ using namespace std;
 int main()
 {
 	int menu_choice = 0; // user entered selection for initiating the correct function 
+
+	int index_to_remove = 0;
 	
 	string input_validator; // used to ensure valid input
 
@@ -96,8 +98,6 @@ int main()
 
 			break;
 		case 4:
-			int index_to_remove = 0;
-
 			cout << "Enter the index of the contact you would like to remove, or,"
 				<< " if you are unsure, enter -1 to return to the menu: ";
 
@@ -112,6 +112,9 @@ int main()
 			{
 				my_contacts.remove_contact_by_index(index_to_remove);
 			}
+
+			break;
+
 		case 5:
 			break;
 
