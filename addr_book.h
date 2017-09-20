@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Contact.h"
 
 
@@ -26,6 +27,8 @@ public:
 	void print_all_contacts(); // print all contacts 
 	
 	int get_used(); // returns number of contacts in the address book
+
+	int get_max_size(); //returns the max size of the address book
 	
 	void read_file(std::string fileName); //reads the address book from a csv
 	
