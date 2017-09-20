@@ -14,7 +14,12 @@ void addr_book::add_contact(Contact itemToAdd)
 
 	used = get_used();
 
-	address_book[used] = itemToAdd;
+	if (used = MAX_SIZE)
+	{
+		std::cout << "Your AddressBook is full. Please delete some of your contacts before trying to add any more." << endl;
+	}
+	else
+		address_book[used] = itemToAdd;
 }
 
 void addr_book::remove_contact(Contact itemToRemove)
@@ -24,7 +29,13 @@ void addr_book::remove_contact(Contact itemToRemove)
 	for (int i = 0; i < get_used(); i++)
 	{
 		if (itemToRemove.to_string() == address_book[i].to_string)
-			address_book[i] = null_contact;
+		{
+			address_book[i] = address_book[get_used() - 1];
+			
+			address_book[get_used() - 1] = null_contact;
+			
+			break;
+		}
 	}
 }
 

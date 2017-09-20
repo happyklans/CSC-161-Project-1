@@ -112,8 +112,11 @@ int main()
 			{
 				my_contacts.remove_contact_by_index(index_to_remove);
 			}
+		case 5:
+			break;
 
 		default:
+			cout << "Sorry, that's not a valid option, please try again." << endl << endl;
 			break;
 		}
 	}
