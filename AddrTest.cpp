@@ -36,6 +36,9 @@ int main()
 	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	cout << endl << endl;
 
+	//populate address book from file
+	my_contacts.read_file("address.csv");
+
 	//actual menu and input validation
 	while (menu_choice != 5)
 	{
@@ -114,7 +117,7 @@ int main()
 			break;
 		}
 	}
-	}
+	
 
 	return 0;
 }

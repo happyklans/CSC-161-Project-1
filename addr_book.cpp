@@ -30,15 +30,22 @@ void addr_book::remove_contact(Contact itemToRemove)
 
 int addr_book::find_contact(Contact itemToFind)
 {
+	bool found = false;
+	
 	for (int i = 0; i < get_used(); i++)
 	{
 		if (itemToFind.to_string() == address_book[i].to_string)
-			return i;
+			found = true;
 		else
 		{
-			return -1;
+			found = false;
 		}
+
+		if (found == true)
+			return i;
 	}
+
+	return -1;
 }
 
 void addr_book::remove_contact_by_index(int indexToRemove)
@@ -46,6 +53,8 @@ void addr_book::remove_contact_by_index(int indexToRemove)
 	Contact null_contact;
 
 	address_book[indexToRemove] = null_contact;
+
+	return;
 }
 
 void addr_book::print_all_contacts()
@@ -54,6 +63,8 @@ void addr_book::print_all_contacts()
 	{
 		std::cout << address_book[i].to_string() << std::endl;
 	}
+
+	return;
 }
 
 int addr_book::get_used()
@@ -75,13 +86,13 @@ int addr_book::get_max_size()
 	return MAX_SIZE;
 }
 
-void read_file()
+void addr_book::read_file(std::string filename)
 {
-	std::ifstream address_book("address.csv"); //long term stroage for our address book
+	std::ifstream address_book(filename); //long term stroage for our address book
 	
 	addr_book my_contacts;
 
-	address_book.open("address.csv", std::ios::out); //open the csv for reading
+	address_book.open(filename, std::ios::out); //open the csv for reading
 
 	if (address_book.eof == false)//does not enter the loop if the file is empty
 	{
@@ -139,6 +150,20 @@ void read_file()
 			my_contacts.add_contact(constructor);
 
 		} while (address_book.peek() != EOF);
+
+		return;
 	}
+}
+
+void addr_book::write_file(std::string filename)
+{
+	std::ofstream out_file;
+
+	for (int i = 0; i < get_used(); i++)
+	{
+		out_file << address_book[i].to_file_string();
+	}
+
+	return;
 }
 
