@@ -64,7 +64,7 @@ std::string Address::to_file() const
 {
 	std::string output_string;
 
-	output_string = street_address + "\n" + city + ", " + state + " " + zip;
+	output_string = street_address + "," + city + "," + state + "," + zip;
 
 	return output_string;
 }

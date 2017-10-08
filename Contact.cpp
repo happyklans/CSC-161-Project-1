@@ -89,8 +89,8 @@ std::string Contact::to_file_string() const
 {
 	std::string output_string;
 
-	output_string = full_name.to_string() + full_address.to_string() +
-		+"\n" + phone + "\n" + email + "\n" + birthday + "\n" + picture_file + "\n";
+	output_string = full_name.to_file() + full_address.to_file() + ","
+		+ phone + "," + email + "," + birthday + "," + picture_file + "\n";
 
 	return output_string;
 }

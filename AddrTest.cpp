@@ -3,7 +3,7 @@ Benjamin Stanton
 CSC 161, Prof. Julie Schneider
 09/13/2017
 Menu program for the address book aplication
-*/
+
 
 #include <iostream>
 #include <string>
@@ -45,7 +45,7 @@ int main()
 	while (menu_choice != 5)
 	{
 		//menu
-		cout << " 1. Add a new Contact to your AddressBook\n\n"
+		cout << "\n\n1. Add a new Contact to your AddressBook\n\n"
 			
 			" 2. Find out how many Contacts are in your AddressBook\n\n"
 			
@@ -53,7 +53,7 @@ int main()
 			
 			" 4. Delete a Contact from your AddressBook\n\n"
 			
-			" 5. Exit the Program\n\n"
+			" 5. Exit the Program\n\n\n"
 			
 			" Please enter the action you would like to execute (1-5): ";
 
@@ -82,6 +82,9 @@ int main()
 		case 1:
 		{
 			Contact to_be_added; //block scope object to be added to the address_book
+
+			if (my_contacts.is_full() == true)
+				break;
 
 			to_be_added.set_contact_info();
 
@@ -116,6 +119,8 @@ int main()
 			break;
 
 		case 5:
+			my_contacts.write_file("address.csv");
+
 			break;
 
 		default:
@@ -127,3 +132,4 @@ int main()
 
 	return 0;
 }
+*/

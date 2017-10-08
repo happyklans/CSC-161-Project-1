@@ -113,11 +113,14 @@
   <ItemGroup>
     <ClCompile Include="Address.cpp" />
     <ClCompile Include="AddrTest.cpp" />
+    <ClCompile Include="addr_book.cpp" />
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="Name.cpp" />
+    <ClCompile Include="new_addrtest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Address.h" />
+    <ClInclude Include="addr_book.h" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="Name.h" />
   </ItemGroup>

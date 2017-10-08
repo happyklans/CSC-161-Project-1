@@ -53,7 +53,7 @@ std::string Name::to_file() const
 {
 	std::string output_string;
 
-	output_string = last_name + ", " + first_name;
+	output_string = last_name + "," + first_name;
 
 	return output_string;
 }

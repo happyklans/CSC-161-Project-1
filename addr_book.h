@@ -21,6 +21,8 @@ public:
 	void remove_contact(Contact itemToRemove); // removes a contact from the address book
 	
 	int find_contact(Contact itemToFind); // find a contact in the address book
+
+	bool is_full(); //checks to see if the array is full
 	
 	void remove_contact_by_index(int indexToRemove); // remove a contact by its index in the address book
 	
