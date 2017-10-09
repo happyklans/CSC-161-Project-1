@@ -16,7 +16,7 @@ class Categorized_contact : public Contact
 
 		void get_categorized_contact() const; //assesor, prints to console
 		
-		Field get_category() const; // assesor for the superclass data embers only
+		Field get_category() const; // assesor for the superclass data members only
 		
 		Field to_string() const; // formats input into a field for output
 		

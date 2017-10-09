@@ -1,15 +1,18 @@
 #include "Categorized_Contact.h"
 
+// default constructor
 Categorized_contact::Categorized_contact() :Contact() 
 {
 	category;
 }
 
+//parameterized constructor
 Categorized_contact::Categorized_contact(Field contact_category, const Contact &contact) : Contact(contact)
 {
 	category = contact_category;	
 }
 
+//mutator
 void Categorized_contact::set_categorized_contact(Field contact_category, Name full_name_input, Address full_address_input, 
 	Field phone_input, Field email_input, Field birthday_input, Field picture_file_input)
 {
@@ -20,7 +23,7 @@ void Categorized_contact::set_categorized_contact(Field contact_category, Name f
 	return;
 }
 
-
+//asessor
 void Categorized_contact::get_categorized_contact() const
 {
 	std::cout << category << endl;
@@ -30,11 +33,13 @@ void Categorized_contact::get_categorized_contact() const
 	return;
 }
 
+//assesor for the superclass data members only
 Field Categorized_contact::get_category() const
 {
 	return category;
 }
 
+//formats data for output
 Field Categorized_contact::to_string() const
 {
 	Field output_field;
@@ -45,6 +50,7 @@ Field Categorized_contact::to_string() const
 	return output_field;	
 }
 
+//formats data for file output
 Field Categorized_contact::to_file_string() const
 {
 	Field to_file_field;
