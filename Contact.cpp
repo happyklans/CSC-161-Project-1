@@ -4,17 +4,17 @@
 //default constructor
 Contact::Contact()
 {
-	Contact::full_name;
+	full_name;
 	
-	Contact::full_address;
+	full_address;
 	
-	Contact::phone;
+	phone;
 	
-	Contact::email;
+	email;
 	
-	Contact::birthday;
+	birthday;
 	
-	Contact::picture_file;
+	picture_file;
 }
 
 //secondary constructor 
@@ -34,28 +34,21 @@ Contact::Contact(Name full_name, Address full_address, Field phone, Field email,
 }
 
 //populate data members with user entered values
-void Contact::set_contact_info()
+void Contact::set_contact_info(Name full_name_input, Address full_address_input, Field phone_input,
+	Field email_input, Field birthday_input, Field picture_file_input)
 {
 	
-	full_name.set_full_name();
+	full_name = Name(full_name_input);
 
-	full_address.set_full_address();
+	full_address = Address(full_address_input);
 
-	std::cout << "Enter the phone number (i.e. 012-345-6789): ";
+	phone = phone_input;
 
-	std::cin >> phone;
+	email = email_input;
 
-	std::cout << "Enter the email address (i.e. johndoe@gmail.com): ";
+	birthday = birthday_input;
 
-	std::cin >> email;
-
-	std::cout << "Enter the birthday (mm/dd/yy):";
-
-	std::cin >> birthday;
-
-	std::cout << "Enter the name of the picture file (i.e. john_doe.jpg): ";
-
-	std::cin >> picture_file;
+	picture_file = picture_file_input;
 
 	return;
 }
@@ -79,8 +72,9 @@ Field Contact::to_string() const
 	Field output_string;
 
 	output_string = full_name.to_string() + full_address.to_string() +
-		+"\n" + phone + "\n" + email + "\n" + birthday + "\n" + picture_file + "\n";
-
+		+"\n" + "   Phone:" + phone + "\n" + "   Email:" + email + "\n" + "Birthday:" + 
+		birthday + "\n" + "PictFile:" + picture_file + "\n";
+	
 	return output_string;
 }
 

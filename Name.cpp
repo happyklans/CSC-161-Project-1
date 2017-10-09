@@ -4,8 +4,8 @@
 // default constructor
 Name::Name()
 {
-	Name::first_name;
-	Name::last_name;
+	first_name;
+	last_name;
 }
 
 // secondary argumented constructor
@@ -16,20 +16,11 @@ Name::Name(Field fname, Field lname)
 }
 
 // gets user input for first and last name
-void Name::set_full_name()
+void Name::set_full_name(Field first_name_input, Field last_name_input)
 {
-	std::cout << "Enter the first name: ";
-	
-	std::cin >> first_name;
-	
-	if (std::cin.peek() == '\n')
-		std::cin.ignore();
-	
-	std::cout << "Enter the last name: ";
-	
-	std::cin >> last_name;
-	
-	return;
+	first_name = first_name_input;
+
+	last_name = last_name_input;
 }
 //prints full name
 void Name::get_full_name() const
@@ -43,7 +34,7 @@ Field Name::to_string() const
 {
 	Field output_string;
 	
-	output_string = last_name + ", " + first_name + '\n';
+	output_string = "    Name:" + last_name + ", " + first_name + '\n';
 
 	return output_string;
 }
@@ -53,7 +44,7 @@ Field Name::to_file() const
 {
 	Field output_string;
 
-	output_string = last_name + "," + first_name;
+	output_string =  first_name + "," + last_name;
 
 	return output_string;
 }

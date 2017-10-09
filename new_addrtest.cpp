@@ -29,7 +29,6 @@ Prompt for the item number to delete (counting number starting at 1)
 
 
 #include <iostream>
-#include <string>
 #include <iomanip> //provides setw function
 #include "Addr_Book.h"
 using namespace std;
@@ -38,7 +37,7 @@ const int consoleWidth = 100;
 
 
 
-void infoPrompt(addr_book& addrbook);
+void infoPrompt(Addr_Book& addrbook);
 
 int main()
 {
@@ -46,8 +45,14 @@ int main()
 	int userAns = 0;
 	
 	int numSelected = 0;
+
+	Field category_choice;
+
+	Field good_inputs = "abcde";
+
+	bool valid_input = false;
 	
-	addr_book addrbook;
+	Addr_Book addrbook;
 	
 	Contact new_contact;
 
@@ -73,9 +78,7 @@ int main()
 			if (addrbook.is_full() == true)
 				break;
 
-			new_contact.set_contact_info();
-
-			addrbook.add_contact(new_contact);
+			infoPrompt(addrbook);
 
 			break;
 		case 2:
@@ -83,9 +86,70 @@ int main()
 			cout << "The number of contacts that are in your Address Book are " << addrbook.get_used() << "." << endl;
 			break;
 		case 3:
-			//pring all contacts
-			addrbook.print_all_contacts();
-			break;
+			while (valid_input == false)
+			{
+				std::cout << "Choose a category from the list below:\n"
+					<< "a) Family\n"
+					<< "b) Work\n"
+					<< "c) School\n"
+					<< "d) Friend\n"
+					<< "e) Other\n"
+					<< "f) All Contacts\n";
+
+				std::cin >> category_choice;
+
+				if (category_choice.length() > 1 || category_choice.length() == 0)
+				{
+					cout << "That is not a valid input. Please try again\n";
+				}
+				else if (good_inputs.find(category_choice) == -1)
+				{
+					cout << "That is not a valid input. Please try again\n";
+
+					continue;
+				}
+				else
+				{
+					valid_input = true;
+
+					switch (static_cast<int>(category_choice[0]))
+					{
+					case 97:
+						addrbook.print_by_category("Family");//print contacts by category
+
+						break;
+
+					case 98:
+						addrbook.print_by_category("Work");//			""
+
+						break;
+
+					case 99:
+						addrbook.print_by_category("School");//			""
+
+						break;
+
+					case 100:
+						addrbook.print_by_category("Friend");//			""
+
+						break;
+
+					case 101:
+						addrbook.print_by_category("Other");//			""
+
+						break;
+
+					case 102:
+						addrbook.print_all_contacts();//print all contacts
+					
+						break;
+
+					default:
+						break;
+					}
+				}
+			}
+
 		case 4:
 			//remove contact
 			addrbook.print_all_contacts(); //prints contacts
@@ -107,59 +171,126 @@ int main()
 	cin.get();
 	return 0;
 }
-void infoPrompt(addr_book& addrbook)//prompting function
+void infoPrompt(Addr_Book& addrbook)//prompting function
 {
-	string tFirstName;
-	string tLastName;
-	string tStreetAddress;
-	string tCityAddress;
-	string tStateAddress;
-	string tZip;
-	string tPhoneNum;
-	string tEmail;
-	string tBirthday;
-	string tPicFile;
+	Field category_choice;
+	Field good_inputs = "abcde";
+	bool valid_input = false;
+	Field tFirstName;
+	Field tLastName;
+	Field tStreetAddress;
+	Field tCityAddress;
+	Field tStateAddress;
+	Field tZip;
+	Field tPhoneNum;
+	Field tEmail;
+	Field tBirthday;
+	Field tPicFile;
 
 	if (addrbook.get_used() < addrbook.get_max_size()) //does not let user add if used space in file is more than capacity
 	{
-		cout << "Enter the following information:" << endl;
-		cout << "First Name: " << endl;
-		cin >> tFirstName;
-		cout << "Last Name: " << endl;
-		cin >> tLastName;
-		cout << "Street Address: " << endl;
-		
-		getline(cin, tStreetAddress);//allows spaces  
-		cout << "City: " << endl;
-		cin >> tCityAddress;
-		cout << "State: " << endl;
-		cin.ignore();
-		getline(cin, tStateAddress);//allows spaces
-		cout << "Zip Code: " << endl;
-		cin >> tZip;
-		cout << "Phone Number (xxx-xxxx-xxxx): " << endl;
-		cin >> tPhoneNum;
-		cout << "Email Address: " << endl;
-		cin >> tEmail;
-		cout << "Birthday (00/00/0000): " << endl;;
-		cin >> tBirthday;
-		cout << "Add Picture file (pic.jpg): " << endl;
-		cin >> tPicFile;
-		cout << endl;
-		cout << "You entered: " << endl
-			<< tFirstName << " " << tLastName << endl <<
-			tStreetAddress << tCityAddress << " " << tStateAddress << " " << tZip << endl <<
-			tPhoneNum << endl <<
-			tEmail << endl <<
-			tBirthday << endl <<
-			tPicFile << endl;
+		while (valid_input == false)
+		{
+			std::cout << "Choose a category from the list below:\n"
+				<< "a) Family\n"
+				<< "b) Work\n"
+				<< "c) School\n"
+				<< "d) Friend\n"
+				<< "e) Other\n";
+
+			std::cin >> category_choice;
+
+			if (category_choice.length() > 1 || category_choice.length() == 0)
+			{
+				cout << "That is not a valid input. Please try again\n";
+			}
+			else if (good_inputs.find(category_choice) == -1)
+			{
+				cout << "That is not a valid input. Please try again\n";
+
+				continue;
+			}
+			else
+			{
+				valid_input = true;
+
+				switch (static_cast<int>(category_choice[0]))
+				{
+				case 97:
+					category_choice = "Family";
+
+					break;
+
+				case 98:
+					category_choice = "Work";
+
+					break;
+
+				case 99:
+					category_choice = "School";
+
+					break;
+
+				case 100:
+					category_choice = "Friend";
+
+					break;
+
+				case 101:
+					category_choice = "Other";
+
+					break;
+
+				default:
+					break;
+				}
+			}
+
+
+
+
+			cout << "Enter the following information:" << endl;
+			cout << "First Name: " << endl;
+			cin >> tFirstName;
+			cout << "Last Name: " << endl;
+			cin >> tLastName;
+			cout << "Street Address: " << endl;
+
+			getline(cin, tStreetAddress);//allows spaces  
+			cout << "City: " << endl;
+			cin >> tCityAddress;
+			cout << "State: " << endl;
+			cin.ignore();
+			getline(cin, tStateAddress);//allows spaces
+			cout << "Zip Code: " << endl;
+			cin >> tZip;
+			cout << "Phone Number (xxx-xxxx-xxxx): " << endl;
+			cin >> tPhoneNum;
+			cout << "Email Address: " << endl;
+			cin >> tEmail;
+			cout << "Birthday (00/00/0000): " << endl;;
+			cin >> tBirthday;
+			cout << "Add Picture file (pic.jpg): " << endl;
+			cin >> tPicFile;
+			cout << endl;
+			cout << "You entered: " << endl
+				<< tFirstName << " " << tLastName << endl <<
+				tStreetAddress << tCityAddress << " " << tStateAddress << " " << tZip << endl <<
+				tPhoneNum << endl <<
+				tEmail << endl <<
+				tBirthday << endl <<
+				tPicFile << endl;
+
+			valid_input = true;
+		}
 	}
 	else
 	{
 		cout << "Address Book is full, your contact cannot be added." << endl;
 	}
-	Name nameContact = Name::Name(tFirstName, tLastName);
-	Address addrContact = Address::Address(tStreetAddress, tCityAddress, tStateAddress, tZip);
-	Contact numContact = Contact::Contact(nameContact, addrContact, tPhoneNum, tEmail, tBirthday, tPicFile);
-	addrbook.add_contact(numContact);
+	Name name_contact(tFirstName, tLastName);
+	Address addr_contact(tStreetAddress, tCityAddress, tStateAddress, tZip);
+	Contact temp_contact(name_contact, addr_contact, tPhoneNum, tEmail, tBirthday, tPicFile);
+	Categorized_contact contact_to_add(category_choice, temp_contact);
+	addrbook.add_contact(contact_to_add);
 }

@@ -7,6 +7,7 @@
     <ClCompile Include="new_addrtest.cpp" />
     <ClCompile Include="Addr_Book.cpp" />
     <ClCompile Include="Field.cpp" />
+    <ClCompile Include="Categorized_Contact.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Address.h" />

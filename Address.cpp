@@ -4,10 +4,10 @@
 // default constructor
 Address::Address()
 {
-	Address::street_address;
-	Address::city;
-	Address::state;
-	Address::zip;
+	street_address;
+	city;
+	state;
+	zip;
 }
 
 // secondary constructor
@@ -20,26 +20,15 @@ Address::Address(Field street_address, Field city, Field state, Field zip)
 }
 
 // populates data members with user entered values
-void Address::set_full_address()
+void Address::set_full_address(Field street_address_input, Field city_input, Field state_input, Field zip_input)
 {
-	std::cout << "Enter the street address (i.e. '1234 Main St'): ";
+	street_address = street_address_input;
 
-	if (std::cin.peek() == '\n')
-		std::cin.ignore();
+	city = city_input;
 
-	std::getline(std::cin, street_address);
+	state = state_input;
 
-	std::cout << "Enter the city: ";
-
-	std::getline(std::cin, city);
-
-	std::cout << "Enter the state (i.e. CO): ";
-
-	std::getline(std::cin, state);
-
-	std::cout << "Enter the six-digit zip: ";
-
-	std::cin >> zip;
+	zip = zip_input;
 
 	return;
 }
@@ -57,7 +46,7 @@ Field Address::to_string() const
 {
 	Field output_string;
 
-	output_string = street_address + "\n" + city + ", " + state + " " + zip;
+	output_string = " Address:" + street_address + "\n" + city + ", " + state + " " + zip;
 
 	return output_string;
 }

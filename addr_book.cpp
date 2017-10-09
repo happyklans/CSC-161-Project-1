@@ -2,13 +2,13 @@
 
 
 
-addr_book::addr_book()
+Addr_Book::Addr_Book()
 {
-	Contact address_book[MAX_SIZE];
+	Categorized_contact address_book[MAX_SIZE];
 }
 
 
-void addr_book::add_contact(Contact itemToAdd)
+void Addr_Book::add_contact(Categorized_contact itemToAdd)
 {
 	int used = 0; //determines the position at which the contact is to be inserted
 
@@ -19,9 +19,9 @@ void addr_book::add_contact(Contact itemToAdd)
 	return;
 }
 
-void addr_book::remove_contact(Contact itemToRemove)
+void Addr_Book::remove_contact(Categorized_contact itemToRemove)
 {
-	Contact null_contact;
+	Categorized_contact null_contact;
 
 	int index_to_replace = 0;
 
@@ -42,7 +42,7 @@ void addr_book::remove_contact(Contact itemToRemove)
 	return;
 }
 
-int addr_book::find_contact(Contact itemToFind)
+int Addr_Book::find_contact(Categorized_contact itemToFind) const
 {
 	bool found = false;
 	
@@ -71,7 +71,58 @@ int addr_book::find_contact(Contact itemToFind)
 	return -1;
 }
 
-bool addr_book::is_full()
+void Addr_Book::remove_contact_by_index(int indexToRemove)
+{
+	Categorized_contact null_contact;
+
+	int index_to_replace = 0;
+
+	index_to_replace = get_used() - 1;
+
+	address_book[indexToRemove-1] = address_book[index_to_replace];
+
+	address_book[index_to_replace] = null_contact;
+
+	return;
+}
+
+void Addr_Book::print_all_contacts() const
+{
+	for (int i = 0; i < get_used(); i++)
+	{
+		std::cout << i+1 << ")\n" << address_book[i].to_string() << std::endl;
+	}
+
+	return;
+}
+
+void Addr_Book::print_by_category(Field category) const
+{
+	for (int i = 0; i < get_used(); i++)
+	{
+		if (address_book[i].get_category() == category)
+			std::cout << i + 1 << ")\n" << address_book[i].to_string() << std::endl;
+		else continue;
+	}
+
+	return;
+}
+
+int Addr_Book::get_used() const
+{
+	Contact null_contact;
+
+	for (int i = 0; i < MAX_SIZE; i++)
+	{
+		if (null_contact.to_string() == address_book[i].to_string())
+			return i;
+
+	}
+
+	return MAX_SIZE;
+}
+
+bool Addr_Book::is_full() const
 {
 	int used = 0; //used to find the next position in the book
 
@@ -87,51 +138,12 @@ bool addr_book::is_full()
 	return false;
 }
 
-void addr_book::remove_contact_by_index(int indexToRemove)
-{
-	Contact null_contact;
-
-	int index_to_replace = 0;
-
-	index_to_replace = get_used() - 1;
-
-	address_book[indexToRemove-1] = address_book[index_to_replace];
-
-	address_book[index_to_replace] = null_contact;
-
-	return;
-}
-
-void addr_book::print_all_contacts()
-{
-	for (int i = 0; i < get_used(); i++)
-	{
-		std::cout << i+1 << ")\n" << address_book[i].to_string() << std::endl;
-	}
-
-	return;
-}
-
-int addr_book::get_used()
-{
-	Contact null_contact;
-
-	for (int i = 0; i < MAX_SIZE; i++)
-	{
-		if (null_contact.to_string() == address_book[i].to_string())
-			return i;
-
-	}
-
-	return MAX_SIZE;
-}
-
-int addr_book::get_max_size()
+int Addr_Book::get_max_size() const
 {
 	return MAX_SIZE;
 }
 
-void addr_book::read_file(Field filename)
+void Addr_Book::read_file(Field filename)
 {
 
 	std::fstream address_file; //long term stroage for our address book
@@ -151,21 +163,7 @@ void addr_book::read_file(Field filename)
 
 	for (int h = 0; h < MAX_SIZE; h++)
 	{
-		/*
-		illustrating the constructor flow
-		/ first_name_constructor
-		|---> <
-		|      \ last_name_constructor
-		/ name_constructor ---|
-		[  ]  /						 /  address_constructor-|    / street_address_constructor
-		[  ] <		constructor		<	phone_constructor   |-> <  city_constructor
-		[  ]  \						 \  email_constructor        \ state_constructor
-		...							  \ bday_constructor		   zip_constructor
-		picture_file_constructor
-		^					    ^						  ^
-		|					    |					      |
-		primary constructor   secondary constructors      tertiary constructors
-		*/
+		Field category_constructor; // primary constructor 
 
 		Field first_name_constructor; //tertiary constructor for constructing the secondary constructors
 
@@ -201,42 +199,47 @@ void addr_book::read_file(Field filename)
 					switch (field_tracker)
 					{
 					case 0:
-						last_name_constructor += i;
+						category_constructor += i;
 
 						break;
+
 					case 1:
 						first_name_constructor += i;
 
 						break;
 					case 2:
-						street_address_constructor += i;
+						last_name_constructor += i;
 
 						break;
 					case 3:
-						city_constructor += i;
+						street_address_constructor += i;
 
 						break;
 					case 4:
-						state_constructor += i;
+						city_constructor += i;
 
 						break;
 					case 5:
-						zip_constructor += i;
+						state_constructor += i;
 
 						break;
 					case 6:
-						phone_constructor += i;
+						zip_constructor += i;
 
 						break;
 					case 7:
-						email_constructor += i;
+						phone_constructor += i;
 
 						break;
 					case 8:
-						bday_constructor += i;
+						email_constructor += i;
 
 						break;
 					case 9:
+						bday_constructor += i;
+
+						break;
+					case 10:
 						picture_file_constructor += i;
 
 						break;
@@ -257,13 +260,18 @@ void addr_book::read_file(Field filename)
 
 
 		
-		Name name_constructor(first_name_constructor, last_name_constructor); //secondary constructor for constructing the primary constructor
+		Name name_constructor(first_name_constructor, 
+			last_name_constructor); //secondary constructor for constructing the primary constructor
 
-		Address address_constructor(street_address_constructor, city_constructor, state_constructor, zip_constructor);
+		Address address_constructor(street_address_constructor, 
+			city_constructor, state_constructor, zip_constructor); // "
 
-		Contact contact_constructor(name_constructor, address_constructor, phone_constructor, email_constructor, bday_constructor, picture_file_constructor);
+		Contact contact_constructor(name_constructor, address_constructor, phone_constructor, 
+			email_constructor, bday_constructor, picture_file_constructor); // primary constructor
 
-		address_book[h] = contact_constructor;
+		Categorized_contact contact_to_add(category_constructor, contact_constructor); // element to be added
+
+		address_book[h] = contact_to_add;
 
 	}
 	
@@ -273,7 +281,7 @@ void addr_book::read_file(Field filename)
 	return;
 }
 
-void addr_book::write_file(Field filename)
+void Addr_Book::write_file(Field filename) const
 {
 	std::fstream out_file;
 
