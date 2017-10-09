@@ -9,7 +9,7 @@ Name::Name()
 }
 
 // secondary argumented constructor
-Name::Name(std::string fname, std::string lname)
+Name::Name(Field fname, Field lname)
 {
 	Name::first_name = fname;
 	Name::last_name = lname;
@@ -39,9 +39,9 @@ void Name::get_full_name() const
 }
 
 // returns formatted data for output to console
-std::string Name::to_string() const
+Field Name::to_string() const
 {
-	std::string output_string;
+	Field output_string;
 	
 	output_string = last_name + ", " + first_name + '\n';
 
@@ -49,9 +49,9 @@ std::string Name::to_string() const
 }
 
 //retruns formatted data for output to file
-std::string Name::to_file() const
+Field Name::to_file() const
 {
-	std::string output_string;
+	Field output_string;
 
 	output_string = last_name + "," + first_name;
 

@@ -4,7 +4,6 @@
 #define MAX_SIZE 5
 
 #include <iostream>
-#include <string>
 #include <fstream>
 #include "Contact.h"
 
@@ -32,9 +31,9 @@ public:
 
 	int get_max_size(); //returns the max size of the address book
 	
-	void read_file(std::string fileName); //reads the address book from a csv
+	void read_file(Field fileName); //reads the address book from a csv
 	
-	void write_file(std::string fileName); // write the address book to a csv
+	void write_file(Field fileName); // write the address book to a csv
 
 private:
 

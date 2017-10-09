@@ -11,7 +11,7 @@ Address::Address()
 }
 
 // secondary constructor
-Address::Address(std::string street_address, std::string city, std::string state, std::string zip)
+Address::Address(Field street_address, Field city, Field state, Field zip)
 {
 	Address::street_address = street_address;
 	Address::city = city;
@@ -53,9 +53,9 @@ void Address::get_full_address() const
 }
 
 // returns formatted data members for output
-std::string Address::to_string() const
+Field Address::to_string() const
 {
-	std::string output_string;
+	Field output_string;
 
 	output_string = street_address + "\n" + city + ", " + state + " " + zip;
 
@@ -63,9 +63,9 @@ std::string Address::to_string() const
 }
 
 //returns formatted data members for output to file
-std::string Address::to_file() const
+Field Address::to_file() const
 {
-	std::string output_string;
+	Field output_string;
 
 	output_string = street_address + "," + city + "," + state + "," + zip;
 

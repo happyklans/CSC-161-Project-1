@@ -2,7 +2,7 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-#include <string>
+
 #include <iostream>
 #include "Name.h"
 #include "Address.h"
@@ -13,15 +13,15 @@ public:
 	
 	Contact(); //default constructor
 	
-	Contact(Name full_name, Address full_address, std::string phone, std::string email, std::string birthday, std::string picture_file); //secondary constructor
+	Contact(Name full_name, Address full_address, Field phone, Field email, Field birthday, Field picture_file); //secondary constructor
 
 	void set_contact_info(); // populates the data members with user input
 	
 	void get_contact_info() const; //prints the data members
 
-	std::string to_string() const; //returns the formatted data members for output
+	Field to_string() const; //returns the formatted data members for output
 
-	std::string to_file_string() const; //retruns the formatted data members for output to file
+	Field to_file_string() const; //retruns the formatted data members for output to file
 
 private:
 	
@@ -29,13 +29,13 @@ private:
 	
 	Address full_address;
 	
-	std::string phone;
+	Field phone;
 	
-	std::string email;
+	Field email;
 	
-	std::string birthday;
+	Field birthday;
 	
-	std::string picture_file;
+	Field picture_file;
 };
 
 #endif

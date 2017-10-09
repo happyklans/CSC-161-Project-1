@@ -46,9 +46,9 @@ int addr_book::find_contact(Contact itemToFind)
 {
 	bool found = false;
 	
-	std::string search_value;
+	Field search_value;
 
-	std::string possible_match;
+	Field possible_match;
 
 	search_value = itemToFind.to_string();
 
@@ -131,7 +131,7 @@ int addr_book::get_max_size()
 	return MAX_SIZE;
 }
 
-void addr_book::read_file(std::string filename)
+void addr_book::read_file(Field filename)
 {
 
 	std::fstream address_file; //long term stroage for our address book
@@ -167,27 +167,27 @@ void addr_book::read_file(std::string filename)
 		primary constructor   secondary constructors      tertiary constructors
 		*/
 
-		std::string first_name_constructor; //tertiary constructor for constructing the secondary constructors
+		Field first_name_constructor; //tertiary constructor for constructing the secondary constructors
 
-		std::string last_name_constructor;//				"
+		Field last_name_constructor;//				"
 
-		std::string street_address_constructor; //				"
+		Field street_address_constructor; //				"
 
-		std::string city_constructor;//					"
+		Field city_constructor;//					"
 
-		std::string state_constructor;//					"
+		Field state_constructor;//					"
 
-		std::string zip_constructor;//					"
+		Field zip_constructor;//					"
 
-		std::string phone_constructor; //secondary constructor for constructing the primary constructor
+		Field phone_constructor; //secondary constructor for constructing the primary constructor
 
-		std::string email_constructor;//						"
+		Field email_constructor;//						"
 
-		std::string bday_constructor;//						"
+		Field bday_constructor;//						"
 
-		std::string picture_file_constructor;//				"
+		Field picture_file_constructor;//				"
 
-		std::string line;
+		Field line;
 
 		int field_tracker = 0; //tracks commas to determine the field being inputed
 
@@ -273,7 +273,7 @@ void addr_book::read_file(std::string filename)
 	return;
 }
 
-void addr_book::write_file(std::string filename)
+void addr_book::write_file(Field filename)
 {
 	std::fstream out_file;
 
