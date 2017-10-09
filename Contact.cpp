@@ -18,7 +18,7 @@ Contact::Contact()
 }
 
 //secondary constructor 
-Contact::Contact(Name full_name, Address full_address, std::string phone, std::string email, std::string birthday, std::string picture_file)
+Contact::Contact(Name full_name, Address full_address, Field phone, Field email, Field birthday, Field picture_file)
 {
 	Contact::full_name = full_name;
 
@@ -74,9 +74,9 @@ void Contact::get_contact_info() const
 }
 
 //returns the formatted data members for output
-std::string Contact::to_string() const
+Field Contact::to_string() const
 {
-	std::string output_string;
+	Field output_string;
 
 	output_string = full_name.to_string() + full_address.to_string() +
 		+"\n" + phone + "\n" + email + "\n" + birthday + "\n" + picture_file + "\n";
@@ -85,9 +85,9 @@ std::string Contact::to_string() const
 }
 
 //returns the formatted data members for output
-std::string Contact::to_file_string() const
+Field Contact::to_file_string() const
 {
-	std::string output_string;
+	Field output_string;
 
 	output_string = full_name.to_file() + ',' + full_address.to_file() + ","
 		+ phone + "," + email + "," + birthday + "," + picture_file + "\n";
