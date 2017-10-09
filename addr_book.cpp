@@ -110,7 +110,7 @@ void Addr_Book::print_by_category(Field category) const
 
 int Addr_Book::get_used() const
 {
-	Contact null_contact;
+	Categorized_contact null_contact;
 
 	for (int i = 0; i < MAX_SIZE; i++)
 	{
@@ -160,121 +160,122 @@ void Addr_Book::read_file(Field filename)
 		address_file.open(filename, std::ios::trunc | std::ios::out);
 		address_file.close();
 	}
-
-	for (int h = 0; h < MAX_SIZE; h++)
+	else
 	{
-		Field category_constructor; // primary constructor 
-
-		Field first_name_constructor; //tertiary constructor for constructing the secondary constructors
-
-		Field last_name_constructor;//				"
-
-		Field street_address_constructor; //				"
-
-		Field city_constructor;//					"
-
-		Field state_constructor;//					"
-
-		Field zip_constructor;//					"
-
-		Field phone_constructor; //secondary constructor for constructing the primary constructor
-
-		Field email_constructor;//						"
-
-		Field bday_constructor;//						"
-
-		Field picture_file_constructor;//				"
-
-		Field line;
-
-		int field_tracker = 0; //tracks commas to determine the field being inputed
-
-
-		if (std::getline(address_file, line, '\n'))
+		for (int h = 0; h < MAX_SIZE; h++)
 		{
-			for (char i : line)
+			Field category_constructor; // primary constructor 
+
+			Field first_name_constructor; //tertiary constructor for constructing the secondary constructors
+
+			Field last_name_constructor;//				"
+
+			Field street_address_constructor; //				"
+
+			Field city_constructor;//					"
+
+			Field state_constructor;//					"
+
+			Field zip_constructor;//					"
+
+			Field phone_constructor; //secondary constructor for constructing the primary constructor
+
+			Field email_constructor;//						"
+
+			Field bday_constructor;//						"
+
+			Field picture_file_constructor;//				"
+
+			Field line;
+
+			int field_tracker = 0; //tracks commas to determine the field being inputed
+
+
+			if (std::getline(address_file, line))
 			{
-				if (i != ',' && i != '\n')
+				for (char i : line)
 				{
-					switch (field_tracker)
+					if (i != ',' && i != '\n')
 					{
-					case 0:
-						category_constructor += i;
+						switch (field_tracker)
+						{
+						case 0:
+							category_constructor += i;
 
-						break;
+							break;
 
-					case 1:
-						first_name_constructor += i;
+						case 1:
+							first_name_constructor += i;
 
-						break;
-					case 2:
-						last_name_constructor += i;
+							break;
+						case 2:
+							last_name_constructor += i;
 
-						break;
-					case 3:
-						street_address_constructor += i;
+							break;
+						case 3:
+							street_address_constructor += i;
 
-						break;
-					case 4:
-						city_constructor += i;
+							break;
+						case 4:
+							city_constructor += i;
 
-						break;
-					case 5:
-						state_constructor += i;
+							break;
+						case 5:
+							state_constructor += i;
 
-						break;
-					case 6:
-						zip_constructor += i;
+							break;
+						case 6:
+							zip_constructor += i;
 
-						break;
-					case 7:
-						phone_constructor += i;
+							break;
+						case 7:
+							phone_constructor += i;
 
-						break;
-					case 8:
-						email_constructor += i;
+							break;
+						case 8:
+							email_constructor += i;
 
-						break;
-					case 9:
-						bday_constructor += i;
+							break;
+						case 9:
+							bday_constructor += i;
 
-						break;
-					case 10:
-						picture_file_constructor += i;
+							break;
+						case 10:
+							picture_file_constructor += i;
 
-						break;
+							break;
+						}
+
 					}
 
-				}
-
-				else
-				{
-					field_tracker++;
+					else
+					{
+						field_tracker++;
+					}
 				}
 			}
+			else
+			{
+				break;
+			}
+
+
+
+			Name name_constructor(first_name_constructor,
+				last_name_constructor); //secondary constructor for constructing the primary constructor
+
+			Address address_constructor(street_address_constructor,
+				city_constructor, state_constructor, zip_constructor); // "
+
+			Contact contact_constructor(name_constructor, address_constructor, phone_constructor,
+				email_constructor, bday_constructor, picture_file_constructor); // primary constructor
+
+			Categorized_contact contact_to_add(category_constructor, contact_constructor); // element to be added
+
+			address_book[h] = contact_to_add;
+
 		}
-		else
-		{
-			break;
-		}
-
-
-		
-		Name name_constructor(first_name_constructor, 
-			last_name_constructor); //secondary constructor for constructing the primary constructor
-
-		Address address_constructor(street_address_constructor, 
-			city_constructor, state_constructor, zip_constructor); // "
-
-		Contact contact_constructor(name_constructor, address_constructor, phone_constructor, 
-			email_constructor, bday_constructor, picture_file_constructor); // primary constructor
-
-		Categorized_contact contact_to_add(category_constructor, contact_constructor); // element to be added
-
-		address_book[h] = contact_to_add;
-
 	}
-	
 
 	address_file.close();
 

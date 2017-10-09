@@ -48,7 +48,7 @@ int main()
 
 	Field category_choice;
 
-	Field good_inputs = "abcde";
+	Field good_inputs = "abcdef";
 
 	bool valid_input = false;
 	
@@ -86,6 +86,9 @@ int main()
 			cout << "The number of contacts that are in your Address Book are " << addrbook.get_used() << "." << endl;
 			break;
 		case 3:
+
+			valid_input = false;
+
 			while (valid_input == false)
 			{
 				std::cout << "Choose a category from the list below:\n"
@@ -149,6 +152,8 @@ int main()
 					}
 				}
 			}
+
+			break;
 
 		case 4:
 			//remove contact

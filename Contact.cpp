@@ -72,8 +72,8 @@ Field Contact::to_string() const
 	Field output_string;
 
 	output_string = full_name.to_string() + full_address.to_string() +
-		+"\n" + "   Phone:" + phone + "\n" + "   Email:" + email + "\n" + "Birthday:" + 
-		birthday + "\n" + "PictFile:" + picture_file + "\n";
+		+"\n" + "   Phone: " + phone + "\n" + "   Email: " + email + "\n" + "Birthday: " + 
+		birthday + "\n" + "PictFile: " + picture_file + "\n";
 	
 	return output_string;
 }
