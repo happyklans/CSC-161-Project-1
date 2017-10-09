@@ -30,9 +30,12 @@
     <ClCompile Include="addr_book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="new_addrtest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> 359fe6cd4fddc1584da19642e3201539585c05cd
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Name.h">

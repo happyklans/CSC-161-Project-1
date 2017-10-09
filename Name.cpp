@@ -43,7 +43,7 @@ std::string Name::to_string() const
 {
 	std::string output_string;
 	
-	output_string = last_name + ", " + first_name;
+	output_string = last_name + ", " + first_name + '\n';
 
 	return output_string;
 }

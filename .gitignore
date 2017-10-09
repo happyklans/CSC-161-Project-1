@@ -54,3 +54,5 @@ Temporary Items
 .vs/AddrTest/v15/Browse.VC.db
 .vs/AddrTest/v15/Browse.VC.db
 *.db
+*.suo
+.vs/AddrTest/v15/Browse.VC.db

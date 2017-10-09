@@ -24,6 +24,9 @@ void Address::set_full_address()
 {
 	std::cout << "Enter the street address (i.e. '1234 Main St'): ";
 
+	if (std::cin.peek() == '\n')
+		std::cin.ignore();
+
 	std::getline(std::cin, street_address);
 
 	std::cout << "Enter the city: ";

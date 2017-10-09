@@ -95,7 +95,7 @@ void addr_book::remove_contact_by_index(int indexToRemove)
 
 	index_to_replace = get_used() - 1;
 
-	address_book[indexToRemove] = address_book[index_to_replace];
+	address_book[indexToRemove-1] = address_book[index_to_replace];
 
 	address_book[index_to_replace] = null_contact;
 
@@ -133,16 +133,30 @@ int addr_book::get_max_size()
 
 void addr_book::read_file(std::string filename)
 {
+
 	std::fstream address_file; //long term stroage for our address book
 
 	address_file.open(filename, std::ios::in); //open the csv for reading
 
+	
+		
+	
+	
+	
+	if (!address_file)
+	{
+		address_file.open(filename, std::ios::trunc | std::ios::out);
+		address_file.close();
+	}
+
+	for (int h = 0; h < MAX_SIZE; h++)
+	{
 		/*
 		illustrating the constructor flow
-								                                    / first_name_constructor
-							                                |---> <
-															|      \ last_name_constructor
-									  / name_constructor ---|
+		/ first_name_constructor
+		|---> <
+		|      \ last_name_constructor
+		/ name_constructor ---|
 		[  ]  /						 /  address_constructor-|    / street_address_constructor
 		[  ] <		constructor		<	phone_constructor   |-> <  city_constructor
 		[  ]  \						 \  email_constructor        \ state_constructor
@@ -152,36 +166,33 @@ void addr_book::read_file(std::string filename)
 		|					    |					      |
 		primary constructor   secondary constructors      tertiary constructors
 		*/
-	int i = 0; //iterator position
 
-	std::string first_name_constructor; //tertiary constructor for constructing the secondary constructors
+		std::string first_name_constructor; //tertiary constructor for constructing the secondary constructors
 
-	std::string last_name_constructor;//				"
+		std::string last_name_constructor;//				"
 
-	std::string street_address_constructor; //				"
+		std::string street_address_constructor; //				"
 
-	std::string city_constructor;//					"
+		std::string city_constructor;//					"
 
-	std::string state_constructor;//					"
+		std::string state_constructor;//					"
 
-	std::string zip_constructor;//					"
+		std::string zip_constructor;//					"
 
-	std::string phone_constructor; //secondary constructor for constructing the primary constructor
+		std::string phone_constructor; //secondary constructor for constructing the primary constructor
 
-	std::string email_constructor;//						"
+		std::string email_constructor;//						"
 
-	std::string bday_constructor;//						"
+		std::string bday_constructor;//						"
 
-	std::string picture_file_constructor;//				"
+		std::string picture_file_constructor;//				"
 
-	std::string line;
+		std::string line;
 
-	int field_tracker = 0; //tracks commas to determine the field being inputed
-		
-	for (int i = 0; i < MAX_SIZE; i++)
-	{
+		int field_tracker = 0; //tracks commas to determine the field being inputed
 
-		if (std::getline(address_file, line))
+
+		if (std::getline(address_file, line, '\n'))
 		{
 			for (char i : line)
 			{
@@ -235,8 +246,6 @@ void addr_book::read_file(std::string filename)
 
 				else
 				{
-					address_file.ignore();
-
 					field_tracker++;
 				}
 			}
@@ -245,37 +254,28 @@ void addr_book::read_file(std::string filename)
 		{
 			break;
 		}
-			/*if (line.find(EOF) != -1)
-			{
-				line = "";
-
-				break;
-			}*/
 
 
 		
 		Name name_constructor(first_name_constructor, last_name_constructor); //secondary constructor for constructing the primary constructor
 
-		Address address_constructor(street_address_constructor, city_constructor, state_constructor, zip_constructor); //secondary constructor for constructing the 
-																															//primary constructor
-		Contact constructor(name_constructor, address_constructor, phone_constructor, email_constructor, bday_constructor, picture_file_constructor); //block scope 
-																																							//constructor variable for populating the my_contacts object
+		Address address_constructor(street_address_constructor, city_constructor, state_constructor, zip_constructor);
 
-		address_book[i] = constructor;
+		Contact contact_constructor(name_constructor, address_constructor, phone_constructor, email_constructor, bday_constructor, picture_file_constructor);
+
+		address_book[h] = contact_constructor;
 
 	}
+	
 
 	address_file.close();
 
-		
-	
-	
 	return;
 }
 
 void addr_book::write_file(std::string filename)
 {
-	std::ofstream out_file;
+	std::fstream out_file;
 
 	out_file.open(filename, std::ios::out);
 

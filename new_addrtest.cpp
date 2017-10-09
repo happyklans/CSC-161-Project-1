@@ -49,6 +49,8 @@ int main()
 	
 	addr_book addrbook;
 	
+	Contact new_contact;
+
 	addrbook.read_file("address.csv");
 
 	//Menu Prompt
@@ -67,8 +69,14 @@ int main()
 		switch (userAns)//send user answer through switch
 		{
 		case 1:
-			//prompts user
-			infoPrompt(addrbook);
+
+			if (addrbook.is_full() == true)
+				break;
+
+			new_contact.set_contact_info();
+
+			addrbook.add_contact(new_contact);
+
 			break;
 		case 2:
 			//prints number of contacts entered
@@ -83,7 +91,7 @@ int main()
 			addrbook.print_all_contacts(); //prints contacts
 			cout << "Select the number of the contact that you would like to remove: ";
 			cin >> numSelected;
-			numSelected--;
+	
 			addrbook.remove_contact_by_index(numSelected);//removes contact
 			cout << "Contact " << numSelected + 1 << " has been removed." << endl;
 			break;
