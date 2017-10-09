@@ -8,9 +8,14 @@ Data Structures and Other Objects Using C++ (Authors: Michael Main/Walter Savitc
 
 
 Requirements
-1. Add a new Contact to the AddressBook
+1. Add a new Categorized Contact to the AddressBook
+Prompt for Category by using menu items below:
+(a) Work
+(b) Family
+(c) Friends
+(d) Other
 Prompt for First Name
-Prom    pt for Last Name
+Prompt for Last Name
 Prompt for Street Address
 Prompt for City Address
 Prompt for State Address
@@ -18,11 +23,16 @@ Prompt for Zip Address
 Prompt for Phone Number
 Prompt for Email Address
 Prompt for Birthday
-Prompt for Picture File (ex. julie.jpg)
-2. Find out how many Contacts are in the AddressBook
-3. Print out all the Contacts in the AddressBook
+Prompt for Picture File
+2. Find out how many items are in the AddressBook
+3. Print out all the items in the AddressBook based upon category selection from menu below:
 (Print a counter in front of each contact - starting at 1)
-4. Delete a Contact from the AddressBook
+(a) Work
+(b) Family
+(c) Friends
+(d) Other
+(e) All Contacts
+4. Delete an item from the AddressBook
 Prompt for the item number to delete (counting number starting at 1)
 5. Exit the Program
 */
@@ -86,6 +96,7 @@ int main()
 			cout << "The number of contacts that are in your Address Book are " << addrbook.get_used() << "." << endl;
 			break;
 		case 3:
+			//prints a user selected group of contacts, possibly all of them
 
 			valid_input = false;
 
@@ -208,13 +219,13 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 			if (category_choice.length() > 1 || category_choice.length() == 0)
 			{
 				cout << "That is not a valid input. Please try again\n";
-			}
+			}//input validation
 			else if (good_inputs.find(category_choice) == -1)
 			{
 				cout << "That is not a valid input. Please try again\n";
 
 				continue;
-			}
+			}//input validation
 			else
 			{
 				valid_input = true;
