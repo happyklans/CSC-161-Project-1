@@ -1,24 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DEFECTS>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>c:\users\thor\source\repos\c++\csc-161-project-1\csc-161-project-1\</FILEPATH>
-      <FILENAME>addr_book.cpp</FILENAME>
-      <LINE>195</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>6246</DEFECTCODE>
-    <DESCRIPTION>Local declaration of 'i' hides declaration of the same name in outer scope. For additional information, see previous declaration at line '190' of 'c:\users\thor\source\repos\c++\csc-161-project-1\csc-161-project-1\addr_book.cpp'.</DESCRIPTION>
-    <FUNCTION>addr_book::read_file</FUNCTION>
-    <DECORATED>?read_file@addr_book@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z</DECORATED>
-    <FUNCLINE>134</FUNCLINE>
-    <PATH>
-      <SFA>
-        <FILEPATH>c:\users\thor\source\repos\c++\csc-161-project-1\csc-161-project-1\</FILEPATH>
-        <FILENAME>addr_book.cpp</FILENAME>
-        <LINE>190</LINE>
-        <COLUMN>15</COLUMN>
-      </SFA>
-    </PATH>
-  </DEFECT>
-</DEFECTS>
+<DEFECTS></DEFECTS>

@@ -1,2 +1,10 @@
-﻿  AddrTest.vcxproj -> C:\Users\Thor\source\repos\C++\CSC-161-Project-1\x64\Debug\AddrTest.exe
+﻿  new_addrtest.cpp
+  Name.cpp
+  Field.cpp
+  Contact.cpp
+  Addr_Book.cpp
+  Address.cpp
+  Compiling...
+  Generating Code...
+  AddrTest.vcxproj -> C:\Users\Thor\source\repos\C++\CSC-161-Project-1\x64\Debug\AddrTest.exe
   AddrTest.vcxproj -> C:\Users\Thor\source\repos\C++\CSC-161-Project-1\x64\Debug\AddrTest.pdb (Partial PDB)
