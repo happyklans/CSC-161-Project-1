@@ -14,5 +14,6 @@
     <ClInclude Include="Name.h" />
     <ClInclude Include="Addr_Book.h" />
     <ClInclude Include="Field.h" />
+    <ClInclude Include="Categorized_Contact.h" />
   </ItemGroup>
 </Project>

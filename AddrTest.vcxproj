@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClInclude Include="Address.h" />
     <ClInclude Include="Addr_Book.h" />
+    <ClInclude Include="Categorized_Contact.h" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="Name.h" />
