@@ -1,3 +1,12 @@
 ﻿  new_addrtest.cpp
-  AddrTest.vcxproj -> C:\Users\Ben\source\repos\C++\CSC-161 Project 1\x64\Debug\AddrTest.exe
-  AddrTest.vcxproj -> C:\Users\Ben\source\repos\C++\CSC-161 Project 1\x64\Debug\AddrTest.pdb (Partial PDB)
+  Name.cpp
+  Field.cpp
+  Contact.cpp
+  Categorized_Contact.cpp
+  Addr_Book.cpp
+  Address.cpp
+  Compiling...
+  Generating Code...
+c:\users\thor\source\repos\c++\csc-161-project-1\addr_book.cpp(51): warning C4715: 'Addr_Book::operator=': not all control paths return a value
+  AddrTest.vcxproj -> C:\Users\Thor\source\repos\C++\CSC-161-Project-1\x64\Debug\AddrTest.exe
+  AddrTest.vcxproj -> C:\Users\Thor\source\repos\C++\CSC-161-Project-1\x64\Debug\AddrTest.pdb (Partial PDB)

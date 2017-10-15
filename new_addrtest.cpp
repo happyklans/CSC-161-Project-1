@@ -75,9 +75,6 @@ int main()
 		{
 		case 1:
 
-			if (addrbook.is_full() == true)
-				break;
-
 			infoPrompt(addrbook);
 
 			break;
@@ -187,9 +184,8 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 	Field tBirthday;
 	Field tPicFile;
 
-	if (addrbook.get_used() < addrbook.get_max_size()) //does not let user add if used space in file is more than capacity
-	{
-		while (valid_input == false)
+	
+	while (valid_input == false)
 		{
 			std::cout << "Choose a category from the list below:\n"
 				<< "a) Family\n"
@@ -244,7 +240,7 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 				default:
 					break;
 				}
-			}
+			
 
 
 
@@ -284,10 +280,7 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 			valid_input = true;
 		}
 	}
-	else
-	{
-		cout << "Address Book is full, your contact cannot be added." << endl;
-	}
+	
 	Name name_contact(tFirstName, tLastName);
 	Address addr_contact(tStreetAddress, tCityAddress, tStateAddress, tZip);
 	Contact temp_contact(name_contact, addr_contact, tPhoneNum, tEmail, tBirthday, tPicFile);

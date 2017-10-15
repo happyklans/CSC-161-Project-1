@@ -2,21 +2,60 @@
 
 
 
+// default constructor
 Addr_Book::Addr_Book()
 {
-	Categorized_contact address_book[MAX_SIZE];
+	used = 0;
+	capacity = 0;
+	address_book = nullptr;
+	debug = false;
 }
 
-
-void Addr_Book::add_contact(Categorized_contact itemToAdd)
+Addr_Book::~Addr_Book()  // destructor
 {
-	int used = 0; //determines the position at which the contact is to be inserted
+	free();
+}
 
-	used = get_used();
-	
+Addr_Book::Addr_Book(const Addr_Book& source) // copy constructor
+{
+	used = 0;
+	capacity = 0;
+	address_book = nullptr;
+	capacity = source.capacity;
+	address_book = new Categorized_contact[capacity];
+	for (int i = 0; i < source.used; i++)
+		add_contact(source.address_book[i]);
+
+	if (debug)
+		cout << "In copy constructor: " << address_book << endl;
+
+}
+// assignment operator
+Addr_Book& Addr_Book::operator=(const Addr_Book& source)
+{
+	// check for self assignment
+	if (this == &source)  // check to see if address
+						  // of source equals address
+						  // of this that invoked the
+						  // member function
+		return *this;
+
+	// free any existing memory before making the assignment
+	free();
+	used = capacity = 0;
+
+	capacity = source.capacity;
+	address_book = new Categorized_contact[capacity];
+	for (int i = 0; i < source.used; i++)
+		add_contact(source.address_book[i]);
+}
+
+void Addr_Book::add_contact(const Categorized_contact &itemToAdd)
+{
+	if (get_used() == capacity)
+		alloc(2); // call alloc to create more memory
 	address_book[used] = itemToAdd;
-
-	return;
+	++used;
 }
 
 void Addr_Book::remove_contact(Categorized_contact itemToRemove)
@@ -112,35 +151,14 @@ int Addr_Book::get_used() const
 {
 	Contact null_contact;
 
-	for (int i = 0; i < MAX_SIZE; i++)
+	for (int i = 0; i < capacity; i++)
 	{
 		if (null_contact.to_string() == address_book[i].to_string())
 			return i;
 
 	}
 
-	return MAX_SIZE;
-}
-
-bool Addr_Book::is_full() const
-{
-	int used = 0; //used to find the next position in the book
-
-	used = get_used();
-
-	if (used == MAX_SIZE)
-	{
-		std::cout << "Your AddressBook is full. Please delete some of your contacts before trying to add any more." << std::endl;
-
-		return true;
-	}
-
-	return false;
-}
-
-int Addr_Book::get_max_size() const
-{
-	return MAX_SIZE;
+	return capacity;
 }
 
 void Addr_Book::read_file(Field filename)
@@ -161,7 +179,7 @@ void Addr_Book::read_file(Field filename)
 		address_file.close();
 	}
 
-	for (int h = 0; h < MAX_SIZE; h++)
+	for (int h = 0; h < capacity; h++)
 	{
 		Field category_constructor; // primary constructor 
 
@@ -297,3 +315,21 @@ void Addr_Book::write_file(Field filename) const
 	return;
 }
 
+void Addr_Book::alloc(int increaseSize)
+{
+	Categorized_contact* temp_contact = nullptr;
+	capacity += increaseSize; // increase capacity
+	temp_contact = new Categorized_contact[capacity]; // create tmpData of new capacity
+	copy(address_book, address_book + used, temp_contact); // copy original to tmpData
+	free();  // destroy all memory of original
+	address_book = temp_contact;
+}
+
+void Addr_Book::free()
+{
+	if (address_book != nullptr)
+	{
+		delete[] address_book;
+		address_book = nullptr;
+	}
+}
