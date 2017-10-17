@@ -46,8 +46,8 @@ Field Address::to_string() const
 {
 	Field output_string;
 
-	output_string = " Address:" + street_address + "\n" + city + ", " + state + " " + zip;
-
+	output_string = " Address: " + street_address + "\n" + "          " + city + ", " + state + " " + zip;
+					
 	return output_string;
 }
 

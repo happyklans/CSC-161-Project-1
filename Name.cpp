@@ -34,7 +34,7 @@ Field Name::to_string() const
 {
 	Field output_string;
 	
-	output_string = "    Name:" + last_name + ", " + first_name + '\n';
+	output_string = "    Name: " + last_name + ", " + first_name + '\n';
 
 	return output_string;
 }
