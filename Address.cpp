@@ -61,7 +61,46 @@ Field Address::to_file() const
 	return output_string;
 }
 
+/*----------------------------friend functions-----------------------------------*/
+istream & operator >> (istream &in, Address &a)
+{
+	in >> a.street_address;
 
+	in >> a.city;
+
+	in >> a.state;
+
+	in >> a.zip;
+
+	return in;
+}
+
+ostream & operator << (ostream &out, Address &a)
+{
+	out << a.to_string();
+
+	return out;
+}
+
+ifstream & operator >> (ifstream &in, Address &a)
+{
+	in >> a.street_address;
+
+	in >> a.city;
+
+	in >> a.state;
+
+	in >> a.zip;
+
+	return in;
+}
+
+ofstream & operator << (ofstream &out, Address &a)
+{
+	out << a.to_file();
+
+	return out;
+}
 
 
 

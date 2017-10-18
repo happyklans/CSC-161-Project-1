@@ -88,3 +88,99 @@ Field Contact::to_file_string() const
 
 	return output_string;
 }
+
+/*---------------------friend functions-----------------------------*/
+//logical operators
+bool operator == (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	if (contact_on_left.full_name == contact_on_right.full_name)
+		return true;
+	else
+		return false;
+
+}
+
+bool operator != (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	return !(contact_on_left == contact_on_right);
+}
+
+bool operator < (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	if (contact_on_left.full_name < contact_on_right.full_name)
+		return true;
+	else
+		return false;
+}
+
+bool operator > (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	if (contact_on_left.full_name > contact_on_right.full_name)
+		return true;
+	else
+		return false;
+}
+
+bool operator <= (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	if (contact_on_left.full_name == contact_on_right.full_name || contact_on_left.full_name < contact_on_right.full_name)
+		return true;
+	else
+		return false;
+}
+
+bool operator >= (const Contact &contact_on_left, const Contact &contact_on_right)
+{
+	if (contact_on_left.full_name == contact_on_right.full_name || contact_on_left.full_name > contact_on_right.full_name)
+		return true;
+	else
+		return false;
+}
+//stream operators
+istream & operator >> (istream &in, Contact &c)
+{
+	in >> c.full_name;
+
+	in >> c.full_address;
+
+	in >> c.phone;
+
+	in >> c.email;
+
+	in >> c.birthday;
+
+	in >> c.picture_file;
+
+	return in;
+}
+
+ostream & operator << (ostream &out, Contact &c)
+{
+	out << c.to_string();
+
+	return out;
+}
+
+ifstream & operator >> (ifstream &in, Contact &c)
+{
+	in >> c.full_name;
+
+	in >> c.full_address;
+
+	in >> c.phone;
+
+	in >> c.email;
+
+	in >> c.birthday;
+
+	in >> c.picture_file;
+
+	return in;
+}
+
+ofstream & operator << (ofstream &out, Contact &c)
+{
+	out << c.to_file_string();
+
+	return out;
+}

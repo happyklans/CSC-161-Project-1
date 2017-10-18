@@ -59,3 +59,54 @@ Field Categorized_contact::to_file_string() const
 
 	return to_file_field;
 }
+
+/*------------------------------friend functions----------------------------*/
+istream & operator >> (istream &in, Categorized_contact &cc)
+{
+	in >> cc.category;
+
+	in >> cc.full_name;
+
+	in >> cc.full_address;
+
+	in >> cc.phone;
+
+	in >> cc.email;
+
+	in >> cc.birthday;
+
+	in >> cc.picture_file;
+
+	return in;
+}
+
+ostream & operator << (ostream &out, Categorized_contact &cc)
+{
+	out << cc.to_string();
+
+	return out;
+}
+
+ifstream & operator >> (ifstream &in, Categorized_contact &cc)
+{
+	in >> cc.full_name;
+
+	in >> cc.full_address;
+
+	in >> cc.phone;
+
+	in >> cc.email;
+
+	in >> cc.birthday;
+
+	in >> cc.picture_file;
+
+	return in;
+}
+
+ofstream & operator << (ofstream &out, Categorized_contact &cc)
+{
+	out << cc.to_file_string();
+
+	return out;
+}                   

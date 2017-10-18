@@ -1,7 +1,5 @@
 #include "Addr_Book.h"
 
-
-
 // default constructor
 Addr_Book::Addr_Book()
 {
@@ -166,6 +164,8 @@ void Addr_Book::read_file(Field filename)
 
 	std::fstream address_file; //long term stroage for our address book
 
+	Field line;
+
 	address_file.open(filename, std::ios::in); //open the csv for reading
 	
 	if (!address_file)
@@ -175,7 +175,7 @@ void Addr_Book::read_file(Field filename)
 	}
 
 
-	for (int h = 0; h < capacity; h++)
+	while (std::getline(address_file, line))
 	{
 		
 			Field category_constructor; // primary constructor 
@@ -200,14 +200,11 @@ void Addr_Book::read_file(Field filename)
 
 			Field picture_file_constructor;//				"
 
-			Field line;
+			
 
 			int field_tracker = 0; //tracks commas to determine the field being inputed
 
-
-			if (std::getline(address_file, line))
-			{
-				for (char i : line)
+			for (char i : line)
 				{
 					if (i != ',' && i != '\n')
 					{
@@ -267,14 +264,7 @@ void Addr_Book::read_file(Field filename)
 						field_tracker++;
 					}
 				}
-			}
-			else
-			{
-				break;
-			}
-
-
-
+			
 			Name name_constructor(first_name_constructor,
 				last_name_constructor); //secondary constructor for constructing the primary constructor
 
@@ -286,9 +276,8 @@ void Addr_Book::read_file(Field filename)
 
 			Categorized_contact contact_to_add(category_constructor, contact_constructor); // element to be added
 
-			address_book[h] = contact_to_add;
+			add_contact(contact_to_add);
 
-		
 	}
 
 	address_file.close();
