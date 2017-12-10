@@ -1,0 +1,17 @@
+
+template<class Type>
+Node<Type>::Node()
+{
+	Type data;
+
+	link = nullptr;
+}
+
+template<class Type>
+Node<Type>::Node(Type & source)
+{
+	data = source;
+
+	link = nullptr;
+}
+

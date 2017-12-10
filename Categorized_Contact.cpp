@@ -89,6 +89,8 @@ ostream & operator << (ostream &out, Categorized_contact &cc)
 
 ifstream & operator >> (ifstream &in, Categorized_contact &cc)
 {
+	in >> cc.category;
+
 	in >> cc.full_name;
 
 	in >> cc.full_address;
@@ -100,6 +102,8 @@ ifstream & operator >> (ifstream &in, Categorized_contact &cc)
 	in >> cc.birthday;
 
 	in >> cc.picture_file;
+
+	in.ignore();
 
 	return in;
 }

@@ -66,6 +66,35 @@ void Contact::get_contact_info() const
 	return;
 }
 
+Name Contact::get_name()
+{
+	return full_name;
+}
+
+Address Contact::get_address()
+{
+	return full_address;
+}
+
+Field Contact::get_phone()
+{
+	return phone;
+}
+
+Field Contact::get_birthday()
+{
+	return birthday;
+}
+
+Field Contact::get_email()
+{
+	return email;
+}
+
+Field Contact::get_picture_file()
+{
+	return picture_file;
+}
 //returns the formatted data members for output
 Field Contact::to_string() const
 {
@@ -84,7 +113,7 @@ Field Contact::to_file_string() const
 	Field output_string;
 
 	output_string = full_name.to_file() + ',' + full_address.to_file() + ","
-		+ phone + "," + email + "," + birthday + "," + picture_file + "\n";
+		+ phone + "," + email + "," + birthday + "," + picture_file + ",\n";
 
 	return output_string;
 }

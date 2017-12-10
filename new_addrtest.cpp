@@ -40,19 +40,27 @@ Prompt for the item number to delete (counting number starting at 1)
 
 #include <iostream>
 #include <iomanip> //provides setw function
-#include "Addr_Book.h"
+#include <string>
+
 using namespace std;
+
+#include "Addr_Book.h"
+#include "BinaryTree.h"
+#include "BinaryNode.h"
+
 
 const int consoleWidth = 100;
 
 
 
-void infoPrompt(Addr_Book& addrbook);
+void infoPrompt(BinTree<Categorized_contact>& addrbook);
 
 int main()
 {
 	//variables
-	int userAns = 0;
+	string input_check;
+
+	int user_answ = 0;
 	
 	int numSelected = 0;
 
@@ -62,15 +70,17 @@ int main()
 
 	bool valid_input = false;
 	
-	Addr_Book addrbook;
-	
-	Contact new_contact;
+	BinTree<Categorized_contact> addrbook;
 
-	addrbook.read_file("address.csv");
+	
+
+	addrbook.ReadFile("address.csv");
 
 	//Menu Prompt
 	do
 	{
+		Categorized_contact * contact_list = new Categorized_contact[addrbook.CountItems()];
+
 		cout << setw(consoleWidth / 2) << " " << "~~~~~ADDRESS BOOK~~~~~" << endl;
 		cout << "MAIN MENU" "\n" << endl;
 		cout << "1. Enter New Contact" << endl;
@@ -80,8 +90,27 @@ int main()
 		cout << "5. Exit Address Book" << endl;
 		cout << endl;
 		cout << "Please choose an option by selecting the number of the action: " << endl;
-		cin >> userAns;
-		switch (userAns)//send user answer through switch
+		cin >> input_check;
+
+		if (input_check.length() > 1)
+		{
+			cout << "Invalid Response, Try Again!" << endl;
+
+			continue;
+		}
+		else if (static_cast<int>(input_check[0]) < 48 || static_cast<int>(input_check[0]) > 57)
+		{
+			cout << "Invalid Response, Try Again!" << endl;
+
+			continue;
+		}
+		else
+		{
+			user_answ = stoi(input_check);
+		}
+
+
+		switch (user_answ)//send user answer through switch
 		{
 		case 1:
 
@@ -90,10 +119,12 @@ int main()
 			break;
 		case 2:
 			//prints number of contacts entered
-			cout << "The number of contacts that are in your Address Book are " << addrbook.get_used() << "." << endl;
+			cout << "The number of contacts that are in your Address Book are " << addrbook.CountItems() << "." << endl;
 			break;
 		case 3:
 			//prints a user selected group of contacts, possibly all of them
+
+			addrbook.export_list(contact_list);
 
 			valid_input = false;
 
@@ -126,32 +157,62 @@ int main()
 					switch (static_cast<int>(category_choice[0]))
 					{
 					case 97:
-						addrbook.print_by_category("Family");//print contacts by category
+						for (int i = 0; i < addrbook.CountItems(); i++)
+						{
+							if ((contact_list[i]).get_category() == "Family")
+								cout << i + 1 << ") " << contact_list[i];
+							else
+								continue;
+						}
 
 						break;
 
 					case 98:
-						addrbook.print_by_category("Work");//			""
+						for (int i = 0; i < addrbook.CountItems(); i++)
+						{
+							if ((contact_list[i]).get_category() == "Work")
+								cout << i + 1 << ") " << contact_list[i];
+							else
+								continue;
+						}
 
 						break;
 
 					case 99:
-						addrbook.print_by_category("School");//			""
+						for (int i = 0; i < addrbook.CountItems(); i++)
+						{
+							if ((contact_list[i]).get_category() == "School")
+								cout << i + 1 << ") " << contact_list[i];
+							else
+								continue;
+						}
 
 						break;
 
 					case 100:
-						addrbook.print_by_category("Friend");//			""
+						for (int i = 0; i < addrbook.CountItems(); i++)
+						{
+							if ((contact_list[i]).get_category() == "Friend")
+								cout << i + 1 << ") " << contact_list[i];
+							else
+								continue;
+						}
 
 						break;
 
 					case 101:
-						addrbook.print_by_category("Other");//			""
+						for (int i = 0; i < addrbook.CountItems(); i++)
+						{
+							if ((contact_list[i]).get_category() == "Other")
+								cout << i + 1 << ") " << contact_list[i];
+							else
+								continue;
+						}
 
 						break;
 
 					case 102:
-						addrbook.print_all_contacts();//print all contacts
+						addrbook.Print();//print all contacts
 					
 						break;
 
@@ -163,28 +224,38 @@ int main()
 
 			break;
 
-		case 4:
-			//remove contact
-			addrbook.print_all_contacts(); //prints contacts
-			cout << "Select the number of the contact that you would like to remove: ";
-			cin >> numSelected;
+		//case 4:
+		//	//remove contact
+		//	addrbook.Print(); //prints contacts
+		//	cout << "Select the number of the contact that you would like to remove: ";
+		//	cin >> numSelected;
 	
-			addrbook.remove_contact_by_index(numSelected);//removes contact
-			cout << "Contact " << numSelected + 1 << " has been removed." << endl;
-			break;
+		//	addrbook.remove_by_item_number(numSelected);//removes contact
+		//	cout << "Contact " << numSelected + 1 << " has been removed." << endl;
+		//	break;
 		case 5:
 			//writes to file and exits program
-			addrbook.write_file("address.csv");
+			addrbook.WriteFile("address.csv");
 			break;
 		default:
 			//error message - loops back up to menu
 			cout << "Invalid Response, Try Again!" << endl;
+
+			cin.get();
+
+			break;
 		}
-	} while (userAns != 5);//loops until user selects 5
+	
+		delete[] contact_list;
+
+	} while (user_answ != 5);//loops until user selects 5
+	
+	
+	
 	cin.get();
 	return 0;
 }
-void infoPrompt(Addr_Book& addrbook)//prompting function
+void infoPrompt(BinTree<Categorized_contact>& addrbook)//prompting function
 {
 	Field category_choice;
 	Field good_inputs = "abcde";
@@ -267,13 +338,11 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 			cout << "Last Name: " << endl;
 			cin >> tLastName;
 			cout << "Street Address: " << endl;
-
 			getline(cin, tStreetAddress);//allows spaces  
 			cout << "City: " << endl;
 			cin >> tCityAddress;
 			cout << "State: " << endl;
-			cin.ignore();
-			getline(cin, tStateAddress);//allows spaces
+			cin >> tStateAddress;
 			cout << "Zip Code: " << endl;
 			cin >> tZip;
 			cout << "Phone Number (xxx-xxxx-xxxx): " << endl;
@@ -301,5 +370,5 @@ void infoPrompt(Addr_Book& addrbook)//prompting function
 	Address addr_contact(tStreetAddress, tCityAddress, tStateAddress, tZip);
 	Contact temp_contact(name_contact, addr_contact, tPhoneNum, tEmail, tBirthday, tPicFile);
 	Categorized_contact contact_to_add(category_choice, temp_contact);
-	addrbook.add_contact(contact_to_add);
+	addrbook.Add(contact_to_add);
 }

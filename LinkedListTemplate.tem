@@ -1,0 +1,357 @@
+
+template <class T>
+LinkedList<T>::LinkedList()
+{
+	head = nullptr;
+}
+
+template <class T>
+LinkedList<T>::LinkedList(const LinkedList & source)
+{
+	*this = source;
+}
+
+template<class T>
+void LinkedList<T>::operator = (const LinkedList & source)
+{
+	if (&source == this)
+		return *this;
+
+	free_all_nodes();
+
+	this->head = nullptr;
+
+	copy_list(source.head);
+
+}
+
+template<class T>
+LinkedList<T>::~LinkedList()
+{
+	free_all_nodes();
+}
+
+template<class T>
+void LinkedList<T>::add_ascending(T datain)
+{
+	Node<T>* item = alloc_node(datain);
+
+	Node<T>* tmp = head;
+
+	head = item;
+
+	item->link = tmp;
+	
+	return;
+}
+
+template<class T>
+void LinkedList<T>::add_descending(T datain)
+{
+	Node<T>* item = alloc_node(datain);
+
+	Node<T>* traverse = nullptr;
+
+	traverse = head;
+
+	if (traverse == nullptr)
+	{
+		head = item;
+	}
+	else
+	{
+
+		while (traverse->link != nullptr)
+		{
+			traverse = traverse->link;
+		}
+
+		traverse->link = item;
+	}
+	return;
+}
+
+template<class T>
+void LinkedList<T>::remove_by_item_number(int item_number)
+{
+	Node<T> * traverse = head;
+
+	for (int i = 1; i < item_number; i++)
+	{
+		if (traverse->link == nullptr)
+		{
+			break;
+		}
+		else
+		{
+			traverse = traverse->link;
+		}
+	}
+
+	remove_node(traverse);
+
+	return;
+}
+
+template<class T>
+void LinkedList<T>::remove_by_item(T data_to_remove)
+{
+	Node<T> * node_to_remove = nullptr;
+
+
+	node_to_remove = find_node(data_to_remove);
+
+	if (node_to_remove != nullptr)
+		remove_node(node_to_remove);
+	else
+		std::cout << "No matches were found." << endl;
+		eeeee
+	return;
+
+}
+
+template <class T>
+int LinkedList<T>::count_items()
+{
+	Node<T> * traverse = head;
+
+	int num_items = 0;
+
+	while (traverse != nullptr)
+	{
+		traverse = traverse->link;
+
+		num_items++;
+	}
+
+	return num_items;
+
+}
+
+template<class T>
+void LinkedList<T>::read_file(std::string filename)
+{
+	ifstream source_book;
+
+	T read_data;
+
+	source_book.open(filename, ios::in);
+	
+	
+	
+	while (source_book.good())
+	{
+		if (source_book.peek()==EOF)
+			return;
+
+		source_book >> read_data;
+
+		add_descending(read_data);
+	}
+
+	source_book.close();
+
+	return;
+
+}
+
+template<class T>
+void LinkedList<T>::write_file(std::string filename)
+{
+	ofstream source_book;
+
+	Node<T> * traverse = head;
+
+
+	source_book.open(filename, ios::out);
+
+	if (head == nullptr)
+		return;
+
+	for (int i = 0; i < count_items(); i++)
+	{
+		source_book << traverse->data;
+
+		traverse = traverse->link;
+	}
+
+	source_book.close();
+
+	return;
+}
+
+template<class T>
+void LinkedList<T>::print_all()
+{
+	Node<T> * traverse = head;
+
+	int counter = 1;
+
+
+	while (traverse != nullptr)
+	{
+		std::cout << counter << ") " << traverse->data;
+
+		traverse = traverse->link;
+
+		counter++;
+	}
+
+	return;
+}
+
+template<class T>
+void LinkedList<T>::export_list(T * data_array)
+{
+	Node<T> * traverse = nullptr;
+
+	traverse = head;
+
+	for (int i = 0; i < count_items(); i++)
+	{
+		data_array[i] = traverse->data;
+
+		traverse = traverse->link;
+
+	}
+
+	return;
+}
+
+template<class T>
+Node<T> * LinkedList<T>::find_node(T data_to_find)
+{
+	Node<T> * traverse = head;
+
+	while (traverse != nullptr)
+	{
+		if (traverse->data == data_to_remove)
+		{
+			return traverse;
+		}
+		else
+		{
+			traverse = traverse->link;
+		}
+	}
+
+	return traverse;
+}
+
+template<class T>
+Node<T> * LinkedList<T>::find_previous_node(T data_to_find)
+{
+	Node<T> * traverse = head;
+
+	Node<T> * previous_node = nullptr;
+
+	while (traverse != nullptr)
+	{
+		if (traverse->data == data_to_find)
+		{
+			if (previous_node == nullptr)
+				std::cout << "There are no previous nodes.";
+
+			return previous_node;
+		}
+		else
+		{
+			previous_node = traverse;
+
+			traverse = traverse->link;
+		}
+	}
+
+	std::cout << "The item you searched for was not found in the list.";
+
+	previous_node = nullptr;
+
+	return previous_node;
+
+}
+
+template<class T>
+void LinkedList<T>::remove_first()
+{
+	Node<T> * temp = nullptr;
+
+	Node<T> * new_head = nullptr;
+
+	new_head = head->link;
+
+	temp = head;
+
+	remove_node(temp);
+
+	head = traverse;
+
+	return;
+}
+
+template<class T>
+void LinkedList<T>::remove_node(Node<T> * node_to_remove)
+{
+	Node<T> * previous_node = nullptr;
+
+	previous_node = find_previous_node(node_to_remove->data);
+	
+	if (previous_node == nullptr)
+	{
+		head = node_to_remove->link;
+
+		delete node_to_remove;
+
+		return;
+	}
+	else
+	{
+		previous_node->link = node_to_remove->link;
+	}
+	
+	delete node_to_remove;
+
+	return;
+}
+
+template<class T>
+Node<T> * LinkedList<T>::alloc_node(T & datain)
+{
+	Node<T> * temp = new Node<T>(datain);
+
+	return temp;
+}
+
+template<class T>
+void LinkedList<T>::free_all_nodes()
+{
+	Node<T> * traverse = nullptr;
+
+	Node<T> * node_to_delete = nullptr;
+
+	if (head == nullptr)
+		return;
+
+	traverse = head->link;
+
+	node_to_delete = head;
+
+	while (node_to_delete->link != nullptr)
+	{
+		remove_node(node_to_delete);
+
+		node_to_delete = traverse;
+
+		if (traverse->link == nullptr)
+		{
+			remove_node(traverse);
+
+			return;
+		}
+		else
+		{
+			traverse = traverse->link;
+		}
+	}
+
+	return;
+}

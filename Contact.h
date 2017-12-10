@@ -39,6 +39,18 @@ public:
 	
 	void get_contact_info() const; //prints the data members
 
+	Name get_name();
+
+	Address get_address();
+
+	Field get_phone();
+
+	Field get_email();
+
+	Field get_birthday();
+
+	Field get_picture_file();
+
 	Field to_string() const; //returns the formatted data members for output
 
 	Field to_file_string() const; //retruns the formatted data members for output to file

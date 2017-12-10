@@ -5,16 +5,20 @@
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="Name.cpp" />
     <ClCompile Include="new_addrtest.cpp" />
-    <ClCompile Include="Addr_Book.cpp" />
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Categorized_Contact.cpp" />
+    <ClCompile Include="htmlfunc.cpp" />
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="BinaryNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Address.h" />
     <ClInclude Include="Contact.h" />
     <ClInclude Include="Name.h" />
-    <ClInclude Include="Addr_Book.h" />
     <ClInclude Include="Field.h" />
     <ClInclude Include="Categorized_Contact.h" />
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="htmlfunc.h" />
+    <ClInclude Include="BinaryNode.h" />
   </ItemGroup>
 </Project>
