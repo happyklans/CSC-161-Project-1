@@ -24,6 +24,14 @@ public:
 	void set_full_address(Field street_address_input, Field city_input, Field state_input, Field zip_input); //uses user input to set data members
 
 	void get_full_address() const; //outputs data members to console
+
+	Field get_street();
+
+	Field get_city();
+
+	Field get_state();
+
+	Field get_zip();
 	
 	Field to_string() const; //returns formatted data for output
 

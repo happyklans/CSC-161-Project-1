@@ -1,84 +1,241 @@
 ﻿  htmlfunc.cpp
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): error C2059: syntax error: '<'
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(22): note: see reference to class template instantiation 'BinNode<Type>' being compiled
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): error C2238: unexpected token(s) preceding ';'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.h(57): error C2989: 'BinTree': class template has already been declared as a non-class template
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): note: see declaration of 'BinTree'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.h(11): error C3857: 'BinTree': multiple template parameter lists are not allowed
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(29): error C2143: syntax error: missing ')' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(29): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(29): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(29): error C2059: syntax error: ')'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(33): error C2143: syntax error: missing ')' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(33): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(33): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.h(33): error C2059: syntax error: ')'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(43): error C2143: syntax error: missing ')' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(43): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(43): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(43): error C2059: syntax error: ')'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(44): error C2143: syntax error: missing ';' before '{'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(44): error C2447: '{': missing function header (old-style formal list?)
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(74): error C2143: syntax error: missing ')' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(74): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(74): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(74): error C2059: syntax error: ')'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(75): error C2143: syntax error: missing ';' before '{'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(75): error C2447: '{': missing function header (old-style formal list?)
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(173): error C2039: 'getFullName': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(173): error C2228: left of '.getLastName' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(173): error C2228: left of '.getFirstName' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(181): error C2039: 'getCategory': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(183): error C2039: 'getFullAddress': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(183): error C2228: left of '.getStreet' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(184): error C2039: 'getFullAddress': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(184): error C2228: left of '.getCity' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(184): error C2228: left of '.getState' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(185): error C2039: 'getFullAddress': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(185): error C2228: left of '.getZip' must have class/struct/union
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(189): error C2039: 'getPhone': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(194): error C2039: 'getEmail': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(195): error C2039: 'getEmail': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(199): error C2039: 'getBday': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(203): error C2039: 'getPicture': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-c:\users\thor\source\repos\c++\csc-161-project-1\htmlfunc.cpp(204): error C2039: 'getPicture': is not a member of 'Categorized_contact'
-  c:\users\thor\source\repos\c++\csc-161-project-1\categorized_contact.h(7): note: see declaration of 'Categorized_contact'
-  BinaryTree.cpp
-c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(185): error C2244: 'BinTree<T>::inOrderTraverse': unable to match function definition to an existing declaration
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(184): note: see declaration of 'BinTree<T>::inOrderTraverse'
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(185): note: definition
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(185): note: 'void BinTree<T>::inOrderTraverse(BinNode<T> *,void (__cdecl *)(T &,int),int &)'
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(185): note: existing declarations
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.cpp(185): note: 'void BinTree<T>::inOrderTraverse(BinNode<T> *,void (__cdecl *)(T &,int &),int &)'
-  BinaryNode.cpp
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(4): error C2988: unrecognizable template declaration/definition
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(4): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(4): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(4): error C2039: 'BinNode': is not a member of '`global namespace''
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(5): error C2143: syntax error: missing ';' before '{'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(5): error C2447: '{': missing function header (old-style formal list?)
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(14): error C2988: unrecognizable template declaration/definition
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(14): error C2143: syntax error: missing ';' before '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(14): error C2059: syntax error: '<'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(14): error C2039: 'BinNode': is not a member of '`global namespace''
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(15): error C2143: syntax error: missing ';' before '{'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.cpp(15): error C2447: '{': missing function header (old-style formal list?)
-  Generating Code...
-  Compiling...
-  new_addrtest.cpp
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): error C2065: 'T': undeclared identifier
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(22): note: see reference to class template instantiation 'BinNode<T>' being compiled
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): error C2923: 'BinTree': 'T' is not a valid template type argument for parameter 'T'
-c:\users\thor\source\repos\c++\csc-161-project-1\binarynode.h(7): error C2990: 'BinTree': non-class template has already been declared as a class template
-  c:\users\thor\source\repos\c++\csc-161-project-1\binarytree.h(13): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.h(7): error C2059: syntax error: '<'
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.h(22): note: see reference to class template instantiation 'BinNode<Type>' being compiled
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.h(7): error C2238: unexpected token(s) preceding ';'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.h(59): error C2989: 'BinTree': class template has already been declared as a non-class template
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.h(7): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.h(13): error C3857: 'BinTree': multiple template parameter lists are not allowed
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(4): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(4): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(10): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(10): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2039: '=': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(17): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(17): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(28): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(28): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2039: 'Add': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(34): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(34): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2039: 'Print': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(69): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(69): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2039: 'WriteFile': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(75): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(75): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2039: 'ReadFile': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(83): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(83): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2039: 'CountItems': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(109): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(109): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2039: 'inOrderTraverse': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(115): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(115): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2373: 'BinTree': redefinition; different type modifiers
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2039: 'alloc': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(122): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(122): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2065: 'T': undeclared identifier
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2923: 'BinNode': 'T' is not a valid template type argument for parameter 'Type'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(129): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(129): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2039: 'print': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2065: 'T': undeclared identifier
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2923: 'BinNode': 'T' is not a valid template type argument for parameter 'Type'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(141): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(141): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2039: 'export_list': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(153): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(153): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(153): fatal error C1003: error count exceeds 100; stopping compilation
+  BinaryTree.tem
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(3): error C2039: 'BinTree': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(4): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(4): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(9): error C2039: 'BinTree': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(10): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(10): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(16): error C2039: '=': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(17): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(17): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(27): error C2039: 'BinTree': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(28): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(28): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): error C2039: 'Add': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(34): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(34): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(68): error C2039: 'Print': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(69): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(69): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2039: 'WriteFile': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(74): error C2039: 'string': is not a member of 'std'
+  c:\users\ben\source\repos\c++\csc-161 project 1\predefined c++ types (compiler internal)(209): note: see declaration of 'std'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(75): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(75): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2039: 'ReadFile': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(82): error C2039: 'string': is not a member of 'std'
+  c:\users\ben\source\repos\c++\csc-161 project 1\predefined c++ types (compiler internal)(209): note: see declaration of 'std'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(83): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(83): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(108): error C2039: 'CountItems': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(109): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(109): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(114): error C2039: 'inOrderTraverse': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(115): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(115): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(121): error C2039: 'alloc': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(122): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(122): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(128): error C2039: 'free': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(129): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(129): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(140): error C2039: 'print': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(141): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(141): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2182: 'BinTree': illegal use of type 'void'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2374: 'BinTree': redefinition; multiple initialization
+  c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(33): note: see declaration of 'BinTree'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(152): error C2039: 'export_list': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(153): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarytree.tem(153): fatal error C1003: error count exceeds 100; stopping compilation
+  BinaryNode.tem
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(4): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(4): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(4): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(4): error C2039: 'BinNode': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(5): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(5): error C2447: '{': missing function header (old-style formal list?)
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(14): error C2988: unrecognizable template declaration/definition
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(14): error C2143: syntax error: missing ';' before '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(14): error C2059: syntax error: '<'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(14): error C2039: 'BinNode': is not a member of '`global namespace''
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(15): error C2143: syntax error: missing ';' before '{'
+c:\users\ben\source\repos\c++\csc-161 project 1\binarynode.tem(15): error C2447: '{': missing function header (old-style formal list?)
   Generating Code...

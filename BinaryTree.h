@@ -1,5 +1,7 @@
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
+
+#include <string>
 #include <iostream>
 #include <fstream>
 
@@ -9,54 +11,54 @@ template <class Type>
 	class BinNode;
 
 template <class T>
-class BinTree
-{
-public:
+	class BinTree
+	{
+	public:
 	
-	BinTree();
+		BinTree();
 	
-	BinTree(const BinTree & source);
+		BinTree(const BinTree & source);
 	
-	BinTree<T> & operator=(const BinTree& source);
+		BinTree<T> & operator=(const BinTree& source);
 	
-	~BinTree();
+		~BinTree();
 	
-	void Add(T dataIn);
+		void Add(T dataIn);
 	
-	void Print();  // inorder
+		void Print();  // inorder
 	
-	void export_list(T * data);
+		void export_list(T * data);
 	
-	void WriteFile(std::string fileName);
+		void WriteFile(string fileName);
 	
-	void ReadFile(std::string fileName);
+		void ReadFile(string fileName);
 	
-	int CountItems();
+		int CountItems();
 	
-	// RemoveByItemNumber, RemoveByItem - BONUS
+		// RemoveByItemNumber, RemoveByItem - BONUS
 	
-	void inOrderTraverse(void process(T &, int));
+		void inOrderTraverse(void process(T &, int));
 
-private:
+	private:
 	
-	BinNode<T>* root;
+		BinNode<T>* root;
 	
-	BinNode<T>* alloc(T dataIn);
+		BinNode<T>* alloc(T dataIn);
 	
-	void free(BinNode<T>* cursor);
+		void free(BinNode<T>* cursor);
 	
-	void print(BinNode<T>* cursor);
+		void print(BinNode<T>* cursor);
 	
-	void copyTree(BinNode<T>* cursor);
+		void copyTree(BinNode<T>* cursor);
 	
-	void inOrderTraverse(BinNode<T>* cursor, void process(T &, int&), int &);
+		void inOrderTraverse(BinNode<T> * cursor, void process(T &, int&), int & count);
 	
-	void writeFile(BinNode<T>* cursor, std::ofstream& ofs);
+		void writeFile(BinNode<T>* cursor, std::ofstream& ofs);
 	
-	int countItems(BinNode<T>* cursor);
-};
+		int countItems(BinNode<T>* cursor);
+	};
 
-//#include "BinaryTree.cpp"
+#include "BinaryTree.tem"
 
 #endif
 

@@ -8,8 +8,8 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="Categorized_Contact.cpp" />
     <ClCompile Include="htmlfunc.cpp" />
-    <ClCompile Include="BinaryTree.cpp" />
-    <ClCompile Include="BinaryNode.cpp" />
+    <ClCompile Include="BinaryTree.tem" />
+    <ClCompile Include="BinaryNode.tem" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Address.h" />

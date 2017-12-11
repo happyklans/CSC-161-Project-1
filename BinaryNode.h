@@ -21,7 +21,7 @@ template <class Type>
 
 	};
 
-#include "BinaryNode.cpp"
+#include "BinaryNode.tem"
 
 
 #endif // !BINNODE_H

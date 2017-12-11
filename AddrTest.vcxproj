@@ -112,8 +112,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Address.cpp" />
-    <ClCompile Include="BinaryTree.cpp" />
-    <ClCompile Include="BinaryNode.cpp" />
+    <ClCompile Include="BinaryTree.tem" />
+    <ClCompile Include="BinaryNode.tem" />
     <ClCompile Include="Categorized_Contact.cpp" />
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="Field.cpp" />

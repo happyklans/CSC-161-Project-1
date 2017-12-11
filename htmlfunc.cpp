@@ -42,10 +42,9 @@ ofstream	htmlIndex;
 
 void	printHTMLindex(BinTree<Categorized_contact> &book)
 {
-	int counter = 0;
 	htmlIndex.open("index.htm");
 	printHTMLhead(htmlIndex, "Item Book Index");
-	book.inOrderTraverse(printHTMLrefs(), counter);
+	book.inOrderTraverse(printHTMLrefs());
 	printHTMLend(htmlIndex);
 	htmlIndex.close();
 }
@@ -71,7 +70,7 @@ void	printHTMLindex(BinTree<Categorized_contact> &book)
  *
  */
 
-void	printHTMLpages(BinTree<Categorized_contact> &book)
+void printHTMLpages(BinTree<Categorized_contact> &book)
 {
 	book.inOrderTraverse(printHTMLpage);
 }
@@ -165,6 +164,8 @@ void	printHTMLpage(Categorized_contact &item,
 	
 	contact_name = item.get_name();
 
+	contact_address = item.get_address();
+
 	htmlPage.open(fileName);
 	if (!htmlPage)
 	{
@@ -184,28 +185,28 @@ void	printHTMLpage(Categorized_contact &item,
 	
 	htmlPage << "<b>Category:</b> " << item.get_category() << "<br>" << endl;
 
-	htmlPage << "<br><b>Address:</b><br>" << item.getFullAddress().getStreet() << "<br>"
-		<< item.getFullAddress().getCity() << ", " << item.getFullAddress().getState()
-		<< "<br>" << item.getFullAddress().getZip() << endl;
+	htmlPage << "<br><b>Address:</b><br>" << contact_address.get_street() << "<br>"
+		<< contact_address.get_city() << ", " << contact_address.get_state()
+		<< "<br>" << contact_address.get_zip() << endl;
 
 	// Here's the phone number
 
- 	htmlPage << "<p><b>phone:</b> " << item.getPhone() << endl;
+ 	htmlPage << "<p><b>phone:</b> " << item.get_phone() << endl;
 
 	// Here's the email item
 
  	// htmlPage << "<p><b>email:</b> " << item.email() << endl;
- 	htmlPage << "<p><b>email:</b> <a href=mailto:" << item.getEmail()
-		<< "> " << item.getEmail() << "</a>\n";
+ 	htmlPage << "<p><b>email:</b> <a href=mailto:" << item.get_email()
+		<< "> " << item.get_email() << "</a>\n";
 
 	// Here's the birthday
 
- 	htmlPage << "<p><b>Birthday:</b> " << item.getBday() << endl;
+ 	htmlPage << "<p><b>Birthday:</b> " << item.get_birthday() << endl;
 
 	// Here's the optional picture
 
-	if (item.getPicture() != " ")
- 		htmlPage << "<p><img src=" << item.getPicture() 
+	if (item.get_picture_file() != " ")
+ 		htmlPage << "<p><img src=" << item.get_picture_file() 
 			 << ">\n";
 
 	htmlPage << "</font>";

@@ -41,6 +41,25 @@ void Address::get_full_address() const
 	return;
 }
 
+Field Address::get_street()
+{
+	return street_address;
+}
+
+Field Address::get_city()
+{
+	return city;
+}
+
+Field Address::get_state()
+{
+	return state;
+}
+
+Field Address::get_zip()
+{
+	return zip;
+}
 // returns formatted data members for output
 Field Address::to_string() const
 {
